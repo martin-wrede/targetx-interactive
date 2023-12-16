@@ -10,7 +10,7 @@ export default function Gallery({ projectNumber }) {
   const [data, setData] = useState([]);
   const timerRef = useRef(null); // Use useRef to create a mutable reference
  
-  const url  =  "/targetx-website/data2.json"; 
+  const url  =  "/targetx-interactive/data2.json"; 
 
   useEffect(() => {
     const getData = async () => {

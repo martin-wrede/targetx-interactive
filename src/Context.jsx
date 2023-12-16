@@ -9,7 +9,8 @@ function ContextProvider({ children }) {
 // const url = "./data2.json";
 
 // New absolute path (works correctly)
-    const url = "/targetx-website/data2.json";
+ 
+const url = "/targetx-interactive/data2.json";
  //  const url = "/data2.json";
  
   useEffect(() => {

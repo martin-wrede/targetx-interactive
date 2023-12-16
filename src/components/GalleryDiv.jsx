@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactPlayer from 'react-player'
-import walkBremerhaven from '/targetx-website/walkBremerhaven.mp4'; 
+// import walkBremerhaven from '/targetx-website/walkBremerhaven.mp4'; 
 
 import PfeilLinks from '../assets/pfeil-links.svg';
 import PfeilRechts from '../assets/pfeil-rechts.svg';
@@ -12,7 +12,7 @@ export default function GalleryDiv({ projectNumber }) {
   const [data, setData] = useState([]);
   const timerRef = useRef(null); // Use useRef to create a mutable reference
  
-  const url  =  "/targetx-website/data2.json"; 
+  const url  =  "/targetx-interactive/data2.json"; 
 
   useEffect(() => {
     const getData = async () => {
@@ -119,7 +119,8 @@ export default function GalleryDiv({ projectNumber }) {
             <div  id="video">
                 {counter > 40 &&  <ReactPlayer  // video will be shown if counter more than 40
                 className='react-player'
-                url='/targetx-website/walkBremerhaven.mp4'
+                // url='/targetx-website/walkBremerhaven.mp4'
+                url='https://www.youtube.com/watch?v=MYcQkjvY2RU&t=6s'
                 playing={true}
                 muted={true}
                 height="100%"

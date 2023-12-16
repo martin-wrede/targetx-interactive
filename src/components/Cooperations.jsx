@@ -1,7 +1,7 @@
 
 import React from 'react'
 import ReactPlayer from 'react-player'
-import walkBremerhaven from '/targetx-website/walkBremerhaven.mp4'; 
+// import walkBremerhaven from '/targetx-website/walkBremerhaven.mp4'; 
 
 
 
