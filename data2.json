@@ -3,11 +3,11 @@
       "page_title": "home",
       "gallery_images": 5,
     "gallery_image_names": [
-      "/targetx-website/Home-01.jpg",  "/targetx-website/Home-02.jpg","/targetx-website/Home-03.jpg",  "/targetx-website/Home-04.jpg", "/targetx-website/Home-05.jpg"
+      "/targetx-interactive/Home-01.jpg",  "/targetx-interactive/Home-02.jpg","/targetx-interactive/Home-03.jpg",  "/targetx-interactive/Home-04.jpg", "/targetx-interactive/Home-05.jpg"
     ],
     "gallery_image_title2": "",
-      "content_h1": "Media-Design",
-      "content_h1_text": "UX/UI Design as well as visual appearances for companies and institutions are a focus of our work: Digital Media, Print",
+      "content_h1": "Kommunikations-Angebote für Unternehmen, Einzelhandel und öffentliche Bereiche",
+      "content_h1_text": "1/5 Fotografie - 2/5 Textinformationen - 3/5 Info-Grafiken - 4/5 3D - 5/5 Video",
       "content_h2": "",
       "content_h2_sub": "",
       "content_h2_image": "",
@@ -20,17 +20,17 @@
     "gallery_image_title": "ux-ui-design",
     "gallery_images": 3,
     "sidebar_h2":"Design Thinking Process: ",
-    "sidebar_image":"/targetx-website/design_thinking_visual.png",
+    "sidebar_image":"/targetx-interactive/design_thinking_visual.png",
     "sidebar_text":"",
     "content_chapter":
       [
           {
-          "content_h1": "Design Thinking",
-          "content_h1_text": "Design Thinking ist ein kreativer Workflow, wo Probleme definiert und gelöst werden. Mit einen mehrstufigen, iterativen Prozess, werden Lösungen so lange optimiert, bis sie sie gewünschte Ergebnisse erzielen. Mit datenbasierten Recherchen und Nutzertests können Resultate überprüft werden.",
-          "content_h1_text2": "Design thinking is a creative workflow that defines problems and finds solutions. A multistep, iterative process allows the solutions to be optimized until they reach a desired outcome. With data-based research and user testing, the results can be measured.",
+          "content_h1": "Interactive Content Streaming",
+          "content_h1_text": "Indem Sie die Präsentations-Software von targetx nutzen, gewinnen Sie in jeder Hinsicht und in jeder Größenordnung: vom einzelnen Standort bis hin zu mehreren Niederlassungen. Sie können 24/7 Ihren Content senden! Dabei haben Sie selbst einfach Online Zugriff auf die Medien-Steuerung. Mit unserem Content-Provider können Sie Ihre Zielgruppe individuell ansprechen. Nutzen Sie unsere Startpakete als preisgünstige Komplettlösung für verschiedene Branchen.",
+          "content_h1_text2": "",
           "content_h2": "1 Casestudy Plutopay",
           "content_h2_sub": "Casestudie UX / UI Design / Responsive Website, 5-months Course at CareerFoundry, 2021",
-          "content_h2_image": "/targetx-website/Home-03.jpg",
+          "content_h2_image": "/targetx-interactive/Home-03.jpg",
           "content_h2_text1": "Plutopay is a case study for a fictional banking app for Europe. It offers digital payment methods.",
           "content_h2_text2": "Check the case study on Behance",
           "button": "Open Case Study",
@@ -41,22 +41,22 @@
           "content_h1_text":"Concept UX / UI Design / Native App",
           "content_h2": "2 Lowpoly Augmented Reality",
           "content_h2_sub": "Casestudie UX / UI Design / Responsive Website, 5-months Course at CareerFoundry, 2021",
-          "content_h2_image": "/targetx-website/Home-04.jpg",
+          "content_h2_image": "/targetx-interactive/Home-04.jpg",
           "content_h2_text1": "Lowpoly is a concept for an AR application based on AR.js",
           "content_h2_text2": "UI Design,JavaScript Prototype",
           "button": "Open Concept",
-          "button_url": "/targetx-website/ux-ar-lowpoly-en.html"
+          "button_url": "/targetx-interactive/ux-ar-lowpoly-en.html"
           },
           {
           "content_h1": "",
           "content_h1_text": "",
           "content_h2": "3 UI-Design: felix1.de",
           "content_h2_sub": "Casestudie UX / UI Design / Responsive Website, 5-months Course at CareerFoundry, 2021",
-          "content_h2_image": "/targetx-website/Home-01.jpg",
+          "content_h2_image": "/targetx-interactive/Home-01.jpg",
           "content_h2_text1": "felix1.de is an online tax advisor portal for Germany. It offers a personal tax advisor for freelancers, companies and private individuals.",
           "content_h2_text2": "Improvement of the UI design, design system, Newsletter design ",
           "button": "Open Project",
-          "button_url": "/targetx-website/ux-felix1-en.html"
+          "button_url": "/targetx-interactive/ux-felix1-en.html"
           }
           ]
   },
@@ -64,10 +64,10 @@
       "page_title": "graphic-design",
       "gallery_images": "",
       "gallery_image_names": 
-      [ "/targetx-website/Reise-01.jpg","/targetx-website/Reise-02.jpg", "/targetx-website/Reise-03.jpg", "/targetx-website/Reise-04.jpg", "/targetx-website/Reise-05.jpg"
-       ,"/targetx-website/Reise-06.jpg", "/targetx-website/Reise-07.jpg", "/targetx-website/Reise-08.jpg" ], 
+      [ "/targetx-interactive/Reise-01.jpg","/targetx-interactive/Reise-02.jpg", "/targetx-interactive/Reise-03.jpg", "/targetx-interactive/Reise-04.jpg", "/targetx-interactive/Reise-05.jpg"
+       ,"/targetx-interactive/Reise-06.jpg", "/targetx-interactive/Reise-07.jpg", "/targetx-interactive/Reise-08.jpg" ], 
        "sidebar_h2":"Poster-Design",
-      "sidebar_image":"/targetx-website/kulturen-des-wir.jpg", 
+      "sidebar_image":"/targetx-interactive/kulturen-des-wir.jpg", 
       "sidebar_text":"",
        "content_h1": "Cart",
       "content_h1_text": "",
@@ -83,16 +83,16 @@
       "gallery_image_title1": "Lakonia",
       "gallery_images1": 6,
       "gallery_image_names": 
-      ["/targetx-website/Lakonia-01.jpg", "/targetx-website/Lakonia-02.jpg","/targetx-website/Lakonia-03.jpg", 
-      "/targetx-website/Lakonia-04.jpg", "/targetx-website/Lakonia-05.jpg","/targetx-website/Lakonia-06.jpg","/targetx-website/Lakonia-07.jpg",
-       "/targetx-website/Lakonia-08.jpg","/targetx-website/Lakonia-09.jpg","/targetx-website/Lakonia-10.jpg",
-       "/targetx-website/Lakonia-11.jpg","/targetx-website/Lakonia-12.jpg","/targetx-website/Lakonia-13.jpg"
+      ["/targetx-interactive/Lakonia-01.jpg", "/targetx-interactive/Lakonia-02.jpg","/targetx-interactive/Lakonia-03.jpg", 
+      "/targetx-interactive/Lakonia-04.jpg", "/targetx-interactive/Lakonia-05.jpg","/targetx-interactive/Lakonia-06.jpg","/targetx-interactive/Lakonia-07.jpg",
+       "/targetx-interactive/Lakonia-08.jpg","/targetx-interactive/Lakonia-09.jpg","/targetx-interactive/Lakonia-10.jpg",
+       "/targetx-interactive/Lakonia-11.jpg","/targetx-interactive/Lakonia-12.jpg","/targetx-interactive/Lakonia-13.jpg"
       ],
       "gallery_image_title2": "Reise",
       "gallery_images2": 8,
       "gallery_image2_names": 
-      [ "/targetx-website/Reise-01.jpg","/targetx-website/Reise-02.jpg", "/targetx-website/Reise-03.jpg", "/targetx-website/Reise-04.jpg", "/targetx-website/Reise-05.jpg"
-       ,"/targetx-website/Reise-06.jpg", "/targetx-website/Reise-07.jpg", "/targetx-website/Reise-08.jpg" ],
+      [ "/targetx-interactive/Reise-01.jpg","/targetx-interactive/Reise-02.jpg", "/targetx-interactive/Reise-03.jpg", "/targetx-interactive/Reise-04.jpg", "/targetx-interactive/Reise-05.jpg"
+       ,"/targetx-interactive/Reise-06.jpg", "/targetx-interactive/Reise-07.jpg", "/targetx-interactive/Reise-08.jpg" ],
        "sidebar_h2":"Gallery Lakonia / Reise",
        "sidebar_image":"",
        "sidebar_text":"",
@@ -126,7 +126,7 @@
           "content_h1_text": "",
           "content_h2": "Jewish life at the mouth of the Weser 1930-45",
           "content_h2_sub": "",
-          "content_h2_image": "/targetx-website/Juedisches_Leben_Plakat_A2_DRUCK-768x1081.jpg",
+          "content_h2_image": "/targetx-interactive/Juedisches_Leben_Plakat_A2_DRUCK-768x1081.jpg",
           "content_h2_text1": "An exhibition project by class 9e of the Lloyd Gymnasium",
           "content_h2_text2": "Corporate-Design, Visual Concept Exhibition, Information Material",
           "button": "",
@@ -138,7 +138,7 @@
       {
         "gallery_image_title1": "Kammerkonzerte",
         "gallery_images1": 2,
-        "gallery_image_names": ["/targetx-website/Kammerkonzerte-01.jpg","/targetx-website/Kammerkonzerte-01.jpg"],
+        "gallery_image_names": ["/targetx-interactive/Kammerkonzerte-01.jpg","/targetx-interactive/Kammerkonzerte-01.jpg"],
         "sidebar_h2": "Gallery",
         "sidebar_image":"",
         "sidebar_text":"",
@@ -149,7 +149,7 @@
                 "content_h1_text": "A series of poster designs for chamber concerts with a purely typographic approach.",
                 "content_h2": "",
                 "content_h2_sub": "",
-                "content_h2_image": "/targetx-website/Kammerkonzerte-03.jpg",
+                "content_h2_image": "/targetx-interactive/Kammerkonzerte-03.jpg",
                 "content_h2_text1": "",
                 "content_h2_text2": "Visual Concept",
                 "button": "",
@@ -161,7 +161,7 @@
       {
         "gallery_image_title1": "Passus",
         "gallery_images1": 3,
-        "gallery_image_names": ["/targetx-website/Passus-02.jpg","/targetx-website/Passus-03.jpg"],
+        "gallery_image_names": ["/targetx-interactive/Passus-02.jpg","/targetx-interactive/Passus-03.jpg"],
         "sidebar_h2":"Gallery",
         "sidebar_image":"",
         "sidebar_text":"",
@@ -172,7 +172,7 @@
             "content_h1_text": "A new corporate-design was developed for the Berlin software company passus. In addition to the company logo, a corporate design was developed that also extends to the pharmadata software product family. The product logos and the company logo form one unit. Graphically, the family unit office, pocket, compact and tablet becomes recognisable.",
             "content_h2": "",
             "content_h2_sub": "",
-            "content_h2_image": "/targetx-website/Passus-01.jpg",
+            "content_h2_image": "/targetx-interactive/Passus-01.jpg",
             "content_h2_text1": "",
             "content_h2_text2": "Corporate-Design: Logo and applications",
             "button": "",
