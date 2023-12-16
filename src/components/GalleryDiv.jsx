@@ -108,7 +108,8 @@ export default function GalleryDiv({ projectNumber }) {
             </div>
             <div className={`${counter > 30 && counter < 40 ?  'iframe-container2' : 'iframe-container'} `} >
                 <iframe 
-                src="https://martin-wrede.github.io/numbers9-text/" 
+               //  src="https://martin-wrede.github.io/numbers9-text/index.html?age=24&name=Liebe%20Iris&title=Frohe%20Weihnachten&text=Gr%C3%BC%C3%9Fe%20von%20Anne" 
+                src="https://martin-wrede.github.io/numbers9-text/index.html?age=24&name=Liebe%20Iris&title=Frohe%20Weihnachten&text=Gr%C3%BC%C3%9Fe%20von%20Anne" 
                 className="iframe-responsive"
                 // style={{position:'fixed', top:'0',  left:'0', bottom:'0', right:'0',
                 // width:'100%', height:'100%'}}
