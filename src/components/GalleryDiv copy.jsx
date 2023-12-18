@@ -5,20 +5,18 @@ import ReactPlayer from 'react-player'
 import PfeilLinks from '../assets/pfeil-links.svg';
 import PfeilRechts from '../assets/pfeil-rechts.svg';
 import Rechteck from '../assets/rechteck.svg';
-import PfeilPlay from '../assets/pfeil-play.svg';
 
 
 let timerID = 0;
-// let tempo = 100
+let tempo = 100
 
 export default function GalleryDiv({ projectNumber }) {
   const [counter, setCounter] = useState(0);
   const [data, setData] = useState([]);
-  const [tempo, setTempo] = useState(400)
   const timerRef = useRef(null); // Use useRef to create a mutable reference
  
   const url  =  "/targetx-interactive/data2.json"; 
-// fetch data
+
   useEffect(() => {
     const getData = async () => {
       try {
@@ -60,6 +58,7 @@ export default function GalleryDiv({ projectNumber }) {
         if (currentCounter % 10 === 0) {
           imageBlend(1);
         }
+
         return currentCounter + 1;
       });
     }, tempo);
@@ -100,33 +99,6 @@ export default function GalleryDiv({ projectNumber }) {
     document.getElementById('layer1').style.transitionDuration = '0.5s';
   }
 
-  function tempoSlider(){
-    
-    
-     // clearInterval(timerRef.current); // Use timerRef.current to clear the interval
-    
-      timerID += 1;
-
-      timerRef.current = setInterval(() => {
-        setCounter((currentCounter) => {
-          if (currentCounter >= 10 * images.length - 1) {
-            setCounter(0);
-            timerID = 0;
-          }
-          if ((currentCounter - 8) % 10 === 0) {
-            imageBlend(0);
-          }
-          if (currentCounter % 10 === 0) {
-            imageBlend(1);
-          }
-          return currentCounter + 1;
-        });
-      }, tempo);
-      return () => {
-        clearInterval(timerRef.current); // Use timerRef.current to clear the interval
-      };
-
-  }
   return (
     <div id="gallery1">
       {/* double check the counter, since the other is not 100% safe */}
@@ -180,16 +152,8 @@ export default function GalleryDiv({ projectNumber }) {
           className="gallery-menu-icon"
         />
         
-        <img src={Rechteck} id="stop"
-          onClick={() => clearInterval(timerRef.current)}
-         // clearInterval(timerRef.current)
-
-          className='gallery-menu-icon' />
-        <img src={PfeilPlay} id="play" 
-        onClick={tempoSlider}
-         
-         className='gallery-menu-icon' />
-       
+        <img src={Rechteck} id="stop" onClick={() => clearInterval(timerRef.current)} className='gallery-menu-icon' />
+        
       </div>
 
       {/* {project} */}
