@@ -116,6 +116,7 @@ export default function GalleryDiv({ projectNumber }) {
                 ></iframe> 
 
             </div>   
+        {/*
             <div  id="video">
                 {counter > 40 &&  <ReactPlayer  // video will be shown if counter more than 40
                 className='react-player'
@@ -127,6 +128,7 @@ export default function GalleryDiv({ projectNumber }) {
                 width="100%"
                 />}
             </div>
+  */}
       </div>
       <div className="gallery-menu">
       

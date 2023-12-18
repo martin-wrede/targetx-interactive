@@ -65,20 +65,28 @@ let onresize = function(e) {
     <div   >
       <ul  >
       <li>
-        <Link to="/design-thinking" 
+        <Link to="/" 
         onClick={toggleMenu}
-        > Konzept </Link>
+        >Home</Link>
       </li>
-    
+      <li>
+        <Link to="/interactive-content" 
+        onClick={toggleMenu}
+        >Interactive Content </Link>
+      </li>
+    {/*
       <li>
         <Link to="/cooperations" 
          onClick={toggleMenu}
         >Umsetzung</Link>
       </li>
+       */}
       <li>
+
+   
         <Link to="/contact" 
          onClick={toggleMenu}
-        >Kontakt</Link>
+        >Contact</Link>
       </li>
       </ul>
 

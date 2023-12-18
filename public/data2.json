@@ -1,13 +1,14 @@
 [
   {
       "page_title": "home",
-      "gallery_images": 5,
+      "gallery_images": 4,
     "gallery_image_names": [
-      "/targetx-interactive/Home-01.jpg",  "/targetx-interactive/Home-02.jpg","/targetx-interactive/Home-03.jpg",  "/targetx-interactive/Home-04.jpg", "/targetx-interactive/Home-05.jpg"
+      "/targetx-interactive/Home-01.jpg",  "/targetx-interactive/Home-02.jpg", "/targetx-interactive/Home-03.jpg",  "/targetx-interactive/Home-04.jpg"
+        
     ],
     "gallery_image_title2": "",
       "content_h1": "Kommunikations-Angebote für Unternehmen, Einzelhandel und öffentliche Bereiche",
-      "content_h1_text": "1/5 Fotografie - 2/5 Textinformationen - 3/5 Info-Grafiken - 4/5 3D - 5/5 Video",
+      "content_h1_text": "1/5 Fotografie - 2/5 Textinformationen - 3/5 Info-Grafiken - 4/5 3D, Video",
       "content_h2": "",
       "content_h2_sub": "",
       "content_h2_image": "",
@@ -19,8 +20,8 @@
   {
     "gallery_image_title": "ux-ui-design",
     "gallery_images": 3,
-    "sidebar_h2":"Design Thinking Process: ",
-    "sidebar_image":"/targetx-interactive/design_thinking_visual.png",
+    "sidebar_h2":"Interactive Content Streaming ",
+    "sidebar_image":"",
     "sidebar_text":"",
     "content_chapter":
       [
@@ -28,9 +29,9 @@
           "content_h1": "Interactive Content Streaming",
           "content_h1_text": "Indem Sie die Präsentations-Software von targetx nutzen, gewinnen Sie in jeder Hinsicht und in jeder Größenordnung: vom einzelnen Standort bis hin zu mehreren Niederlassungen. Sie können 24/7 Ihren Content senden! Dabei haben Sie selbst einfach Online Zugriff auf die Medien-Steuerung. Mit unserem Content-Provider können Sie Ihre Zielgruppe individuell ansprechen. Nutzen Sie unsere Startpakete als preisgünstige Komplettlösung für verschiedene Branchen.",
           "content_h1_text2": "",
-          "content_h2": "1 Casestudy Plutopay",
+          "content_h2": "Bildbeispiel",
           "content_h2_sub": "Casestudie UX / UI Design / Responsive Website, 5-months Course at CareerFoundry, 2021",
-          "content_h2_image": "/targetx-interactive/Home-03.jpg",
+          "content_h2_image": "",
           "content_h2_text1": "Plutopay is a case study for a fictional banking app for Europe. It offers digital payment methods.",
           "content_h2_text2": "Check the case study on Behance",
           "button": "Open Case Study",

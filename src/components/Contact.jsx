@@ -224,7 +224,7 @@ export default function Contact(){
         <br/>
         <br/>
         
-        <img src="contact-iot-1024x611.jpg" />
+        
           <div className="clear"></div>
         </div>
       </div>

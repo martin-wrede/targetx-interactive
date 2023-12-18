@@ -42,15 +42,22 @@ export default function UxuiDesign() {
     <div>
       <div className="content_container" id="main">
         <div className="content_main" id="content">
-          {content_ux}
+        <h1 className="page-title entry-title">Interactive Content Streaming</h1>
+
+     <span className="text-markierung">  Kommunikations Angebote </span> <br/>
+     <span className="text-markierung"> für Unternehmen, </span> <br/>
+     <span className="text-markierung"> Einzelhandel und öffentliche Bereiche </span> <br/>  
+<br/>
+<br/>
+        Indem Sie die Präsentations-Software von targetx nutzen, gewinnen Sie in jeder Hinsicht und in jeder Größenordnung: vom einzelnen Standort bis hin zu mehreren Niederlassungen. Sie können 24/7 Ihren Content senden! Dabei haben Sie selbst einfach Online Zugriff auf die Medien-Steuerung. Mit unserem Content-Provider können Sie Ihre Zielgruppe individuell ansprechen. Nutzen Sie unsere Startpakete als preisgünstige Komplettlösung für verschiedene Branchen.
         </div>
       </div>
       <div id="sidebar" className="content_sub">
         <span className="text-markierung"> {data[1] && data[1].sidebar_h2}
         </span> <br />
         <br />
-        {data[1] &&  <img src={`${data[1].sidebar_image}`} />
-        }
+        <img src="contact-iot-1024x611.jpg" />
+       
        
         <br />
         <br />
