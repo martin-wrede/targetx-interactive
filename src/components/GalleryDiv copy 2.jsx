@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import ReactPlayer from 'react-player';
-// import FullScreen from "react-full-screen";
-
+import ReactPlayer from 'react-player'
 // import walkBremerhaven from '/targetx-website/walkBremerhaven.mp4'; 
 
 import PfeilLinks from '../assets/pfeil-links.svg';
@@ -18,12 +16,8 @@ export default function GalleryDiv({ projectNumber }) {
   const [data, setData] = useState([]);
   const [tempo, setTempo] = useState(400)
   const timerRef = useRef(null); // Use useRef to create a mutable reference
- // const [fullScreen,setFullScreen] = useState(false)
-   const [isFullScreen, setIsFullScreen] = useState(false);
-
-
+  const [fullScreen,setFullScreen] = useState(false)
  
-
   const url  =  "/targetx-interactive/data2.json"; 
 // fetch data
   useEffect(() => {
@@ -110,8 +104,10 @@ export default function GalleryDiv({ projectNumber }) {
   // same structure as above, should be simplied later
   function tempoSlider(){
     
+
      // clearInterval(timerRef.current); // Use timerRef.current to clear the interval
-     timerID += 1;
+    
+      timerID += 1;
 
       timerRef.current = setInterval(() => {
         setCounter((currentCounter) => {
@@ -133,51 +129,24 @@ export default function GalleryDiv({ projectNumber }) {
       };
 
   }
-
-  const handleKeyPress = (event) => {
-    if (event.key === 'g') {
-      // Your custom logic or event handling goes here
-      setIsFullScreen(false)
-      console.log(isFullScreen);
-    }
-    if (event.key === 'f') {
-      // Your custom logic or event handling goes here
-      setIsFullScreen(true)
-      console.log(isFullScreen);
-    }
-  };
-  useEffect(() => {
-    // Add event listener when the component mounts
-    window.addEventListener('keydown', handleKeyPress);
-    // Clean up the event listener when the component unmounts
-    return () => {
-      window.removeEventListener('keydown', handleKeyPress);
-    };
-  }, []); // Empty dependency
-
   return (
     <div id="gallery1">
       {/* double check the counter, since the other is not 100% safe */}
       {counter > images.length * 10 - 1 && setCounter(0)}
       <div id="layer1">
-
-         
-
             <div  id="image" >
                 {/*  counter is linked with array number of images */}
                 {counter < 30 &&   <img id="galleryimage" // image will be hidden if counter more than 40
                 src={images[Math.floor(counter / 10)]} alt="Gallery" /> }
             </div>
-
             <div className={`${counter > 30 && counter < 40 ?  'iframe-container2' : 'iframe-container'} `} >
                 <iframe        
                 src="https://martin-wrede.github.io/numbers9-text/index.html?age=24&name=Liebe%20Iris&title=Frohe%20Weihnachten&text=Gr%C3%BC%C3%9Fe%20von%20Anne" 
-                frameborder="0"
-             //   className={`${isFullScreen  || "iframe-responsive-full"}`}
-                className={`${isFullScreen  ? "iframe-responsive-full"  : "iframe-responsive" }`}
+                className={`${fullScreen ? "iframe-responsive-full":"iframe-responsive"}`}
+                
                 ></iframe> 
-            </div>   
 
+            </div>   
         {/*
             <div  id="video">
                 {counter > 40 &&  <ReactPlayer  // video will be shown if counter more than 40
@@ -192,11 +161,7 @@ export default function GalleryDiv({ projectNumber }) {
             </div>
   */}
       </div>
-      <div  className="gallery-3d">
-       {`${counter > 30 && counter < 40 ? "f: Full Screen   g: Normal Screen" : " "  }`}
-       </div>
       <div className="gallery-menu">
-       
       
         <img
           src={PfeilLinks}
