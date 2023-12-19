@@ -111,7 +111,6 @@ img {
         display: none; } }
   
   
-  
   /* hier die aufklapp button "hamburger-menu" */
   
    
@@ -163,19 +162,29 @@ img {
 }
 
 .gallery-menu-icon:hover {
-  cursor: pointer;
-  
-  background-color:#ff3300;
-
+  cursor: pointer;   
+  background-color:rgba(0, 0, 150, 0.4);
 }
  
 .gallery-menu-icon{
   padding:3px;
   margin:4px;
-  width: 30px;
+  width:30px;
   height: 30px;
   border-radius: 5px;
 }
+.gallery-menu-icon-active{
+ 
+  background-color:rgba(0, 0, 150, 0.4);
+ /* background-color:rgba(255,0,0,0.3);*/
+
+  padding:3px;
+  margin:4px;
+  width:30px;
+  height: 30px;
+  border-radius: 5px;
+}
+
 .gallery-text{
   font-size: 1.2rem;
   font-weight:100;

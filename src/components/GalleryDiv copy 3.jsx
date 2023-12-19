@@ -222,16 +222,14 @@ const[galleryPlaying, setGalleryPlaying] = useState(true);
         />
         
         <img src={Rechteck} id="stop"
-          onClick={tempoStop}
-       
-          className={`${galleryPlaying ? 'gallery-menu-icon':  'gallery-menu-icon-active' }`}
-          
-          />
+          onClick={() => {tempoStop}}
+         // clearInterval(timerRef.current)
+
+          className='gallery-menu-icon' />
         <img src={PfeilPlay} id="play" 
         onClick={tempoSlider}
-        className={`${!galleryPlaying ? 'gallery-menu-icon':  'gallery-menu-icon-active' }`}
-          
-        />
+         
+         className='gallery-menu-icon' />
        
       </div>
 
