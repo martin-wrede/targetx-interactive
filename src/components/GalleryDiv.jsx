@@ -177,7 +177,9 @@ const[galleryPlaying, setGalleryPlaying] = useState(true);
 
             <div className={`${counter > 30 && counter < 40 ?  'iframe-container2' : 'iframe-container'} `} >
                 <iframe        
-                src="https://martin-wrede.github.io/numbers9-text/index.html?age=24&name=&title=Frohe%20Weihnachten&text=Gr%C3%BC%C3%9Fe%20von%20Martin" 
+              //  src="https://martin-wrede.github.io/numbers9-text/index.html?age=24&name=&title=Frohe%20Weihnachten&text=Gr%C3%BC%C3%9Fe%20von%20Martin" 
+                src="https://martin-wrede.github.io/numbers9-text/" 
+               
                 frameborder="0"
              //   className={`${isFullScreen  || "iframe-responsive-full"}`}
                 className={`${isFullScreen  ? "iframe-responsive-full"  : "iframe-responsive" }`}
