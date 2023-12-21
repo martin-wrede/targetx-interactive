@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactPlayer from 'react-player';
-// import FullScreen from "react-full-screen";
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
 
 // import walkBremerhaven from '/targetx-website/walkBremerhaven.mp4'; 
 
@@ -13,14 +13,20 @@ import PfeilPlay from '../assets/pfeil-play.svg';
 let timerID = 0;
 // let tempo = 100
 
-export default function GalleryDiv({ projectNumber }) {
+export default function GalleryDiv({ projectNumber, projectRange  }) {
+
   const [counter, setCounter] = useState(0);
   const [data, setData] = useState([]);
   const [tempo, setTempo] = useState(400)
   const timerRef = useRef(null); // Use useRef to create a mutable reference
- // const [fullScreen,setFullScreen] = useState(false)
+  const [fullScreen,setFullScreen] = useState(false)
    const [isFullScreen, setIsFullScreen] = useState(false);
-const[galleryPlaying, setGalleryPlaying] = useState(true);
+  const[galleryPlaying, setGalleryPlaying] = useState(true);
+
+
+  function checkRange(projectRange){
+    // console.log(projectRange)
+  }
 
  
 
@@ -44,13 +50,31 @@ const[galleryPlaying, setGalleryPlaying] = useState(true);
     getData();
   }, [url]);
   
-  const images = data.length > 0 && data[`${projectNumber}`].gallery_image_names.map((image) => image);
+
+  // from json data file
+ const imagesNeu = data.length > 0 && data[`${projectNumber}`].gallery_image_names.map((image) => image);
+ // const images = data.length > 0 && data[`${projectNumber}`].gallery_image_names.map((image) => image);
+ 
+ let images = [];
+
+ if (projectRange ===  true) {
+    for(let i=0 ; i < imagesNeu.length; i++){
+    const tempVar = projectRange[i]
+    images[i] = imagesNeu[tempVar]
+   console.log(projectRange)
+    } 
+} else {
+    images = imagesNeu;
+ }
+
+ console.log(images)
+
+  
 
   if (images.length === 0) {
     return null; // or render a loading indicator
   }
-
- // console.log('Images:', images);
+ 
 
   useEffect(() => {
     timerID += 1;
@@ -166,37 +190,11 @@ const[galleryPlaying, setGalleryPlaying] = useState(true);
       {/* double check the counter, since the other is not 100% safe */}
       {counter > images.length * 10 - 1 && setCounter(0)}
       <div id="layer1">
-
-         
-
             <div  id="image" >
                 {/*  counter is linked with array number of images */}
-                {counter < 30 &&   <img id="galleryimage" // image will be hidden if counter more than 40
+                {counter < 40 &&   <img id="galleryimage" // image will be hidden if counter more than 40
                 src={images[Math.floor(counter / 10)]} alt="Gallery" /> }
             </div>
-
-            <div className={`${counter > 30 && counter < 40 ?  'iframe-container2' : 'iframe-container'} `} >
-                <iframe        
-                src="https://martin-wrede.github.io/numbers9-text/index.html?age=24&name=Liebe%20Iris&title=Frohe%20Weihnachten&text=Gr%C3%BC%C3%9Fe%20von%20Anne" 
-                frameborder="0"
-             //   className={`${isFullScreen  || "iframe-responsive-full"}`}
-                className={`${isFullScreen  ? "iframe-responsive-full"  : "iframe-responsive" }`}
-                ></iframe> 
-            </div>   
-
-        {/*
-            <div  id="video">
-                {counter > 40 &&  <ReactPlayer  // video will be shown if counter more than 40
-                className='react-player'
-                // url='/targetx-website/walkBremerhaven.mp4'
-                url='https://www.youtube.com/watch?v=MYcQkjvY2RU&t=6s'
-                playing={true}
-                muted={true}
-                height="100%"
-                width="100%"
-                />}
-            </div>
-  */}
       </div>
       <div  className="gallery-3d">
        {`${counter > 30 && counter < 40 ? "f: Full Screen   g: Normal Screen" : " "  }`}
@@ -222,18 +220,26 @@ const[galleryPlaying, setGalleryPlaying] = useState(true);
         />
         
         <img src={Rechteck} id="stop"
-          onClick={() => {tempoStop}}
-         // clearInterval(timerRef.current)
-
-          className='gallery-menu-icon' />
+          onClick={tempoStop}
+       
+          className={`${galleryPlaying ? 'gallery-menu-icon':  'gallery-menu-icon-active' }`}
+          
+          />
         <img src={PfeilPlay} id="play" 
         onClick={tempoSlider}
-         
-         className='gallery-menu-icon' />
-       
+        className={`${!galleryPlaying ? 'gallery-menu-icon':  'gallery-menu-icon-active' }`}
+          
+        />
+
+        {/*
+        <button onClick={()=>checkRange(projectRange)}>check range</button>
+     <br/> <br/> <br/>
+       */}
+
       </div>
 
-      {/* {project} */}
+      {projectRange && projectRange.map((el,i)=> <span key={i}> {el} / </span>) }
+  
     </div>
   );
 }

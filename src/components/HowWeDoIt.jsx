@@ -1,24 +1,30 @@
 import React, { useState } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import GalleryDiv from './GalleryDiv';
-
+import GalleryDivImages from './GalleryDivImages';
+import Image from '../assets/image.jpg';
 
 const mediaCategories = [
   {
     id: '0',
     name: 'Image Gallery',
-    thumb: '/images/image.jpg'
-  },
+    thumb: './images/image.jpg'
+  },  
   {
     id: '1',
-    name: 'Info Graphic',
-    thumb: '/images/image.jpg'
+    name: 'Text',
+    thumb: './images/image.jpg'
   },
   {
     id: '2',
-    name: '3D',
-    thumb: '/images/image.jpg'
+    name: 'Info Graphic',
+    thumb:  './images/image.jpg'
   },
+  {
+    id: '3',
+    name: '3D',
+    thumb:  './images/image.jpg'
+  }
  /*
  {
     id: '4',
@@ -26,11 +32,7 @@ const mediaCategories = [
     thumb: '/images/image.jpg'
   },
   */
-  {
-    id: '3',
-    name: 'Text',
-    thumb: '/images/image.jpg'
-  }
+
 ];
 
 export default function HowWeDoIt() {
@@ -74,7 +76,7 @@ export default function HowWeDoIt() {
 
       </div>
         <div id="sidebar" className="content_sub">
-        <span className="text-markierung"></span>
+        <span className="text-markierung">Drag and Drop</span>
         <h1> </h1>
         <DragDropContext onDragEnd={handleOnDragEnd}>
           <Droppable droppableId="characters">

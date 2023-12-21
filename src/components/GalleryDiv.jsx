@@ -52,18 +52,23 @@ export default function GalleryDiv({ projectNumber, projectRange  }) {
   
 
   // from json data file
-  // const imagesNeu = data.length > 0 && data[`${projectNumber}`].gallery_image_names.map((image) => image);
- const images = data.length > 0 && data[`${projectNumber}`].gallery_image_names.map((image) => image);
- /*
+ const imagesNeu = data.length > 0 && data[`${projectNumber}`].gallery_image_names.map((image) => image);
+ // const images = data.length > 0 && data[`${projectNumber}`].gallery_image_names.map((image) => image);
+ 
  let images = [];
 
-  for(let i=0 ; i < imagesNeu.length; i++){
-     const tempVar = projectRange[i]
+ if (projectRange === 1){
+    for(let i=0 ; i < imagesNeu.length; i++){
+    const tempVar = projectRange[i]
     images[i] = imagesNeu[tempVar]
-    images.push(images[i])
-  }
-*/
-  /// console.log(images)
+    } 
+} else {
+    images = imagesNeu;
+ }
+
+
+
+   console.log(images)
 
   if (images.length === 0) {
     return null; // or render a loading indicator
@@ -253,13 +258,14 @@ export default function GalleryDiv({ projectNumber, projectRange  }) {
           
         />
 
-        
+        {/*
         <button onClick={()=>checkRange(projectRange)}>check range</button>
      <br/> <br/> <br/>
-       
+       */}
 
       </div>
-      {projectRange.map((el,i)=> <span key={i}> {el} / </span>) }
+
+      {projectRange && projectRange.map((el,i)=> <span key={i}> {el} / </span>) }
   
     </div>
   );
