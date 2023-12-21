@@ -6,11 +6,10 @@ import App from './App'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <StrictMode>
     <ContextProvider>
     <BrowserRouter  basename="/targetx-interactive" >
     <App />
     </BrowserRouter >
   </ContextProvider>
-    </StrictMode>,
+    ,
 )

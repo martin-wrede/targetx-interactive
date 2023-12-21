@@ -74,13 +74,13 @@ let onresize = function(e) {
         onClick={toggleMenu}
         >Interactive Content </Link>
       </li>
-    {/*
+    
       <li>
-        <Link to="/cooperations" 
+        <Link to="/how-we-do-it" 
          onClick={toggleMenu}
-        >Umsetzung</Link>
+        >How We Do It</Link>
       </li>
-       */}
+       
       <li>
 
    

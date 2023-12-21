@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactPlayer from 'react-player';
-// import FullScreen from "react-full-screen";
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
 
 // import walkBremerhaven from '/targetx-website/walkBremerhaven.mp4'; 
 
@@ -13,15 +13,19 @@ import PfeilPlay from '../assets/pfeil-play.svg';
 let timerID = 0;
 // let tempo = 100
 
-export default function GalleryDiv({ projectNumber }) {
+export default function GalleryDiv({ projectNumber, projectRange  }) {
+
   const [counter, setCounter] = useState(0);
   const [data, setData] = useState([]);
   const [tempo, setTempo] = useState(400)
   const timerRef = useRef(null); // Use useRef to create a mutable reference
- // const [fullScreen,setFullScreen] = useState(false)
+  const [fullScreen,setFullScreen] = useState(false)
    const [isFullScreen, setIsFullScreen] = useState(false);
-const[galleryPlaying, setGalleryPlaying] = useState(true);
+  const[galleryPlaying, setGalleryPlaying] = useState(true);
 
+function checkRange(projectNumber){
+  console.log(projectNumber)
+}
  
 
   const url  =  "/targetx-interactive/data2.json"; 
@@ -234,10 +238,11 @@ const[galleryPlaying, setGalleryPlaying] = useState(true);
         className={`${!galleryPlaying ? 'gallery-menu-icon':  'gallery-menu-icon-active' }`}
           
         />
+
+        <button onClick={checkRange}>check range</button>
        
       </div>
-
-      {/* {project} */}
+ 
     </div>
   );
 }
