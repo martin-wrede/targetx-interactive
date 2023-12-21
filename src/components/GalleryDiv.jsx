@@ -23,9 +23,11 @@ export default function GalleryDiv({ projectNumber, projectRange  }) {
    const [isFullScreen, setIsFullScreen] = useState(false);
   const[galleryPlaying, setGalleryPlaying] = useState(true);
 
-function checkRange(projectNumber){
-  console.log(projectNumber)
-}
+
+  function checkRange(projectRange){
+    console.log(projectRange)
+  }
+
  
 
   const url  =  "/targetx-interactive/data2.json"; 
@@ -48,13 +50,25 @@ function checkRange(projectNumber){
     getData();
   }, [url]);
   
-  const images = data.length > 0 && data[`${projectNumber}`].gallery_image_names.map((image) => image);
+
+  // from json data file
+  // const imagesNeu = data.length > 0 && data[`${projectNumber}`].gallery_image_names.map((image) => image);
+ const images = data.length > 0 && data[`${projectNumber}`].gallery_image_names.map((image) => image);
+ /*
+ let images = [];
+
+  for(let i=0 ; i < imagesNeu.length; i++){
+     const tempVar = projectRange[i]
+    images[i] = imagesNeu[tempVar]
+    images.push(images[i])
+  }
+*/
+  /// console.log(images)
 
   if (images.length === 0) {
     return null; // or render a loading indicator
   }
-
- // console.log('Images:', images);
+ 
 
   useEffect(() => {
     timerID += 1;
@@ -239,10 +253,14 @@ function checkRange(projectNumber){
           
         />
 
-        <button onClick={checkRange}>check range</button>
+        
+        <button onClick={()=>checkRange(projectRange)}>check range</button>
+     <br/> <br/> <br/>
        
+
       </div>
- 
+      {projectRange.map((el,i)=> <span key={i}> {el} / </span>) }
+  
     </div>
   );
 }

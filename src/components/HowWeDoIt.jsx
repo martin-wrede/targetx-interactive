@@ -5,29 +5,29 @@ import GalleryDiv from './GalleryDiv';
 
 const mediaCategories = [
   {
-    id: 'imagegallery',
+    id: '0',
     name: 'Image Gallery',
     thumb: '/images/image.jpg'
   },
   {
-    id: 'infographic',
+    id: '1',
     name: 'Info Graphic',
     thumb: '/images/image.jpg'
   },
   {
-    id: 'three',
+    id: '2',
     name: '3D',
     thumb: '/images/image.jpg'
   },
  /*
  {
-    id: 'video',
+    id: '4',
     name: 'Video',
     thumb: '/images/image.jpg'
   },
   */
   {
-    id: 'text',
+    id: '3',
     name: 'Text',
     thumb: '/images/image.jpg'
   }
@@ -35,7 +35,9 @@ const mediaCategories = [
 
 export default function HowWeDoIt() {
   const [characters, updateCharacters] = useState(mediaCategories);
-  const [newOrder, setNewOrder] = useState(['imagegallery','infographic', 'three', 'video','text']);
+  const [newOrder, setNewOrder] = useState([]);
+  const [newTrick, setNewTrick] = useState([0,1,2,3]);
+  
 
   function handleOnDragEnd(result) {
     if (!result.destination) return;
@@ -45,13 +47,19 @@ export default function HowWeDoIt() {
     items.splice(result.destination.index, 0, reorderedItem);
 
     updateCharacters(items);
+    
     setNewOrder(items)
   }
 
-  function sendId(order){
-    // const myEvent = this.target.value
-    console.log(order)
-
+  function sendId(arg){
+   
+      // const local = newOrder.map(item => item.id)
+    
+      const local = arg.map(item => Number(item.id))
+     
+      setNewTrick(local)
+     console.log(newTrick)   
+      
   }
 
   return (
@@ -60,7 +68,7 @@ export default function HowWeDoIt() {
     <div className="content_main" id="content">
       <h1 className="page-title entry-title">How we do it</h1>
       
-      <GalleryDiv  projectNumber="0"  pojectRange = {newOrder} />
+      <GalleryDiv  projectRange={newTrick}  projectNumber="0" />
 
    
 
