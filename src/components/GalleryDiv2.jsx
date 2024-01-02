@@ -13,6 +13,7 @@ import PfeilPlay from '../assets/pfeil-play.svg';
 let timerID = 0;
 // let tempo = 100
 
+
 export default function GalleryDiv({ projectNumber, projectRange  }) {
 
   const [counter, setCounter] = useState(0);
@@ -22,10 +23,11 @@ export default function GalleryDiv({ projectNumber, projectRange  }) {
   const [fullScreen,setFullScreen] = useState(false)
    const [isFullScreen, setIsFullScreen] = useState(false);
   const[galleryPlaying, setGalleryPlaying] = useState(true);
+  const[images, setImages] = useState([]);
 
 
   function checkRange(projectRange){
-    /// console.log(projectRange)
+   // console.log(projectRange)
   }
 
  
@@ -52,24 +54,20 @@ export default function GalleryDiv({ projectNumber, projectRange  }) {
   
 
   // from json data file
- const imagesNeu = data.length > 0 && data[`${projectNumber}`].gallery_image_names.map((image) => image);
- // const images = data.length > 0 && data[`${projectNumber}`].gallery_image_names.map((image) => image);
+  const imageData = data.length > 0 && data[`${projectNumber}`].gallery_image_names.map((image) => image)
+
+
+ useEffect(() => {
+  setImages(imageData)
+     // let reorderedArray=[]
+   //   if (imagesNeu && projectRange) { reorderedArray = projectRange.map((index) => imagesNeu[index]); } 
+    //  setImages(reorderedArray)
+         
+  console.log(imageData)
+
+}, [images, projectRange]);
+
  
- let images = [];
-
- if (projectRange === 1){
-    for(let i=0 ; i < imagesNeu.length; i++){
-    const tempVar = projectRange[i]
-    images[i] = imagesNeu[tempVar]
-    } 
-} else {
-    images = imagesNeu;
- }
-
-
-
-  /// console.log(images)
-
   if (images.length === 0) {
     return null; // or render a loading indicator
   }
@@ -130,7 +128,7 @@ export default function GalleryDiv({ projectNumber, projectRange  }) {
     document.getElementById('layer1').style.transitionDuration = '0.5s';
   }
 
-  // same structure as above, should be simplied later^
+  // same structure as above, should be simplied later
 
   function tempoStop(){
     clearInterval(timerRef.current)

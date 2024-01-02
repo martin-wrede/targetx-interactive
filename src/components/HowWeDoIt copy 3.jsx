@@ -5,22 +5,22 @@ const mediaCategories = [
   {
     id: '0',
     name: 'Image Gallery',
-    thumb: './images/image00.jpg',
+    thumb: './images/image01.jpg',
   },
   {
     id: '1',
     name: 'Text',
-    thumb: './images/image01.jpg',
+    thumb: './images/image02.jpg',
   },
   {
     id: '2',
     name: 'Info Graphic',
-    thumb: './images/image02.jpg',
+    thumb: './images/image03.jpg',
   },
   {
     id: '3',
     name: '3D',
-    thumb: './images/image03.jpg',
+    thumb: './images/image04.jpg',
   },
 ];
 
@@ -46,8 +46,7 @@ function GalleryDivUrl({ projectRange, projectNumber }) {
   return (
     <div id="gallery1">
       {images.map((image, i) => (
-        <div key={image}>
-          {i}
+        <div key={i}>
           <img src={image} alt={`Image ${i}`} />
         </div>
       ))}
@@ -58,14 +57,14 @@ function GalleryDivUrl({ projectRange, projectNumber }) {
 
       {projectRange && projectRange.map((el, i) => <span key={i}> {el} / </span>)}
 
-      {/* Button now calls the loadImages function directly */}
-      <button onClick={() => loadImages(projectRange)}>Update Order</button>
+      <button onClick={() => loadImages(projectRange)}>click</button>
     </div>
   );
 }
 
 export default function HowWeDoIt() {
   const [characters, updateCharacters] = useState(mediaCategories);
+  const [newOrder, setNewOrder] = useState([]);
   const [newTrick, setNewTrick] = useState([0, 1, 2, 3]);
 
   function handleOnDragEnd(result) {
@@ -76,15 +75,18 @@ export default function HowWeDoIt() {
     items.splice(result.destination.index, 0, reorderedItem);
 
     updateCharacters(items);
-    setNewTrick(items.map((item) => Number(item.id)));
+    setNewOrder(items.map((item) => Number(item.id)));
   }
+
+  const sendUrl = () => {
+    setNewTrick(newOrder);
+  };
 
   return (
     <div className="content_container" id="main">
       <div className="content_main" id="content">
         <h1 className="page-title entry-title">How we do it</h1>
 
-        {/* Pass newTrick (renamed to projectRange) as a prop */}
         <GalleryDivUrl projectRange={newTrick} projectNumber="0" />
 
       </div>
@@ -118,8 +120,12 @@ export default function HowWeDoIt() {
         </DragDropContext>
 
         <p>
-          {/* Removed the separate button for updating the order */}
-          <button type="submit">Update Order</button>
+          <button
+            onClick={sendUrl}
+            type="submit"
+          >
+            update order
+          </button>
         </p>
 
         <br />
