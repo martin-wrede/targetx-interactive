@@ -26,10 +26,10 @@ const mediaCategories = [
 
 function GalleryDivUrl({ projectRange, projectNumber }) {
   const [images, setImages] = useState([
+    '/targetx-interactive/Home-00.jpg',
     '/targetx-interactive/Home-01.jpg',
     '/targetx-interactive/Home-02.jpg',
     '/targetx-interactive/Home-03.jpg',
-    '/targetx-interactive/Home-04.jpg',
   ]);
 
   function loadImages(projectRange) {
@@ -47,7 +47,7 @@ function GalleryDivUrl({ projectRange, projectNumber }) {
     <div id="gallery1">
       {images.map((image, i) => (
         <div key={image}>
-          {i}
+         Image No: {i}
           <img src={image} alt={`Image ${i}`} />
         </div>
       ))}
@@ -73,6 +73,7 @@ export default function HowWeDoIt() {
 
     const items = Array.from(characters);
     const [reorderedItem] = items.splice(result.source.index, 1);
+    
     items.splice(result.destination.index, 0, reorderedItem);
 
     updateCharacters(items);
