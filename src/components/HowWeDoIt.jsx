@@ -5,22 +5,22 @@ const mediaCategories = [
   {
     id: '0',
     name: 'Image Gallery',
-    thumb: './images/image00.jpg',
+    thumb: './images/image.jpg',
   },
   {
     id: '1',
     name: 'Text',
-    thumb: './images/image01.jpg',
+    thumb: './images/image.jpg',
   },
   {
     id: '2',
     name: 'Info Graphic',
-    thumb: './images/image02.jpg',
+    thumb: './images/image.jpg',
   },
   {
     id: '3',
     name: '3D',
-    thumb: './images/image03.jpg',
+    thumb: './images/image.jpg',
   },
 ];
 
@@ -33,6 +33,7 @@ function GalleryDivUrl({ projectRange, projectNumber }) {
   ]);
 
   function loadImages(projectRange) {
+    console.log('Updating images with projectRange:', projectRange);
     setImages(
       [
         `/targetx-interactive/Home-0${projectRange[0]}.jpg`,
@@ -45,6 +46,9 @@ function GalleryDivUrl({ projectRange, projectNumber }) {
 
   return (
     <div id="gallery1">
+      {/* Button now calls the loadImages function directly */}
+ <button onClick={() => loadImages(projectRange)}>Update Order</button>
+ <br/><br/><br/>
       {images.map((image, i) => (
         <div key={image}>
          Image No: {i}
@@ -58,8 +62,7 @@ function GalleryDivUrl({ projectRange, projectNumber }) {
 
       {projectRange && projectRange.map((el, i) => <span key={i}> {el} / </span>)}
 
-      {/* Button now calls the loadImages function directly */}
-      <button onClick={() => loadImages(projectRange)}>Update Order</button>
+     
     </div>
   );
 }
@@ -84,7 +87,8 @@ export default function HowWeDoIt() {
     <div className="content_container" id="main">
       <div className="content_main" id="content">
         <h1 className="page-title entry-title">How we do it</h1>
-
+ 
+ <br />
         {/* Pass newTrick (renamed to projectRange) as a prop */}
         <GalleryDivUrl projectRange={newTrick} projectNumber="0" />
 
@@ -119,9 +123,11 @@ export default function HowWeDoIt() {
         </DragDropContext>
 
         <p>
-          {/* Removed the separate button for updating the order */}
-          <button type="submit">Update Order</button>
-        </p>
+          {/* Button with debugging console.log 
+
+          <button onClick={() => { console.log('Button clicked'); loadImages(newTrick); }}>Update Order 2</button>
+       */}
+          </p>
 
         <br />
         <br />
