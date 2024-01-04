@@ -86,7 +86,7 @@ export default function HowWeDoIt() {
   return (
     <div className="content_container" id="main">
       <div className="content_main" id="content">
-        <h1 className="page-title entry-title">How we do it</h1>
+        <h1 className="page-title entry-title">How we do it:</h1>
  
  <br />
         {/* Pass newOrder (renamed to projectRange) as a prop */}
