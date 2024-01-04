@@ -24,13 +24,15 @@ const mediaCategories = [
   },
 ];
 
-function GalleryDivUrl({ projectRange, projectNumber }) {
+function GalleryDivUrl({ projectRange, projectNumber, images, loadImages }) {
+   {/*
   const [images, setImages] = useState([
     '/targetx-interactive/Home-00.jpg',
     '/targetx-interactive/Home-01.jpg',
     '/targetx-interactive/Home-02.jpg',
     '/targetx-interactive/Home-03.jpg',
   ]);
+
 
   function loadImages(projectRange) {
     console.log('Updating images with projectRange:', projectRange);
@@ -43,12 +45,14 @@ function GalleryDivUrl({ projectRange, projectNumber }) {
       ]
     );
   }
-
+ */}
+ 
   return (
     <div id="gallery1">
-      {/* Button now calls the loadImages function directly */}
- <button onClick={() => loadImages(projectRange)}>Update Order</button>
- <br/><br/><br/>
+      {/* Button now calls the loadImages function directly 
+ <button onClick={() => loadImages(projectRange)}>Update Order 1</button>
+ */}
+ 
       {images.map((image, i) => (
         <div key={image}>
          Image No: {i}
@@ -69,7 +73,25 @@ function GalleryDivUrl({ projectRange, projectNumber }) {
 
 export default function HowWeDoIt() {
   const [characters, updateCharacters] = useState(mediaCategories);
-  const [newTrick, setNewTrick] = useState([0, 1, 2, 3]);
+  const [newOrder, setNewOrder] = useState([0, 1, 2, 3]);
+  const [images, setImages] = useState([
+    '/targetx-interactive/Home-00.jpg',
+    '/targetx-interactive/Home-01.jpg',
+    '/targetx-interactive/Home-02.jpg',
+    '/targetx-interactive/Home-03.jpg',
+  ]);
+
+  function loadImages(projectRange) {
+    console.log('Updating images with projectRange:', projectRange);
+    setImages(
+      [
+        `/targetx-interactive/Home-0${projectRange[0]}.jpg`,
+        `/targetx-interactive/Home-0${projectRange[1]}.jpg`,
+        `/targetx-interactive/Home-0${projectRange[2]}.jpg`,
+        `/targetx-interactive/Home-0${projectRange[3]}.jpg`,
+      ]
+    );
+  }
 
   function handleOnDragEnd(result) {
     if (!result.destination) return;
@@ -80,7 +102,7 @@ export default function HowWeDoIt() {
     items.splice(result.destination.index, 0, reorderedItem);
 
     updateCharacters(items);
-    setNewTrick(items.map((item) => Number(item.id)));
+    setNewOrder(items.map((item) => Number(item.id)));
   }
 
   return (
@@ -89,8 +111,8 @@ export default function HowWeDoIt() {
         <h1 className="page-title entry-title">How we do it</h1>
  
  <br />
-        {/* Pass newTrick (renamed to projectRange) as a prop */}
-        <GalleryDivUrl projectRange={newTrick} projectNumber="0" />
+        {/* Pass newOrder (renamed to projectRange) as a prop */}
+        <GalleryDivUrl projectRange={newOrder} images={images} loadImages={loadImages} projectNumber="0" />
 
       </div>
       <div id="sidebar" className="content_sub">
@@ -123,10 +145,10 @@ export default function HowWeDoIt() {
         </DragDropContext>
 
         <p>
-          {/* Button with debugging console.log 
+          {/* Button with debugging console.log    */}
 
-          <button onClick={() => { console.log('Button clicked'); loadImages(newTrick); }}>Update Order 2</button>
-       */}
+   
+          <button onClick={() => loadImages(newOrder)}>Update Order</button>
           </p>
 
         <br />
