@@ -25,7 +25,7 @@ const mediaCategories = [
   },
 ];
 
-function GalleryDivUrl({ projectRange, projectNumber, images, loadImages }) {
+function GalleryDivUrl({ projectRange, projectNumber, images, loadImages, newDuration }) {
  
  
   return (
@@ -34,7 +34,7 @@ function GalleryDivUrl({ projectRange, projectNumber, images, loadImages }) {
  
       {images.map((image, i) => (
         <div key={image}>
-         Image No {i}
+         Image No {i} {newDuration}
           <img src={image} alt={`Image ${i}`} />
         </div>
       ))}
@@ -85,24 +85,32 @@ export default function HowWeDoIt() {
     updateCharacters(items);
     setNewOrder(items.map((item) => Number(item.id)));
   }
+   // update duration 
+   function updateText(event) {
+    const localNewDuration =  event.target.value  
+    setNewDuration(localNewDuration)
+  }
 
   // update duration 
   function updateDuration(event) {
-    const localNewDuration =  event.target.value  
-    setNewDuration(localNewDuration)
-    console.log(newDuration)
+   const localNewDuration =  event.target.value  
+   setNewDuration(localNewDuration)
+    console.log(id )
   }
-  // delete task
-  //function deleteTask(id){
-   // const filtered = taskList.filter(index => index.id !== id)
-  //  updateCharacters(filtered)
-  // }
 
+  // delete task
   function deleteTask(id) {
     const filteredCharacters = characters.filter(character => character.id !== id);
     updateCharacters(filteredCharacters);
   }
   
+    // delete task
+    function modifyDuration(id) {
+      const filteredCharacters = characters.filter(character => character.id !== id);
+      updateCharacters(filteredCharacters);
+    }
+
+
   return (
     <div className="content_container" id="main">
       <div className="content_main" id="content">
@@ -110,7 +118,7 @@ export default function HowWeDoIt() {
  
  <br />
         {/* Pass newOrder (renamed to projectRange) as a prop */}
-        <GalleryDivUrl projectRange={newOrder} images={images} loadImages={loadImages} projectNumber="0" />
+        <GalleryDivUrl projectRange={newOrder} images={images} loadImages={loadImages} projectNumber="0" newDuration={newDuration} />
 
       </div>
       <div id="sidebar" className="content_sub">
@@ -140,11 +148,17 @@ export default function HowWeDoIt() {
                         id={id}
                       //  value={id}
                         name="duration"
-                      onChange={updateDuration}
-                     //   onChange={updateDuration}
+                   
+                       onChange={updateDuration}
                          />
 
-                      
+                        <input 
+                        type="text"
+                        id={id}
+                        name="text"
+                    //  onChange={() => updateText(id)}
+                     //   onChange={updateDuration}
+                     />
                         <button onClick={() => deleteTask(id)} type="button">-</button>
 
                       </li>
@@ -166,7 +180,10 @@ export default function HowWeDoIt() {
 
         <br />
         <br />
-
+                      Titel string <br />
+                      Duration number  <br />
+                      Speed number  <br />
+                      Checkbox boolean<br />
         <div className="clear"></div>
       </div>
     </div>
