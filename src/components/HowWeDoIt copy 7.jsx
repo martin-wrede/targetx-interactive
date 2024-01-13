@@ -224,27 +224,46 @@ function MediaItem({
         <span className="text-markierung">Drag and Drop</span>
         <h1> </h1>
         <DragDropContext onDragEnd={handleOnDragEnd}>
-        <Droppable droppableId="mediaItems">
-  {(provided) => (
-    <ul className="mediaItems" {...provided.droppableProps} ref={provided.innerRef}>
-      {mediaItems.map(({ imageOrder, name, imageUrl }, index) => (
-        <Draggable
-          key={imageOrder}
-          draggableId={imageOrder}
-          index={index}
-        >
-          {(provided) => (
-            <li key={imageOrder} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-              <MediaItem {...mediaItems[index]} />
-            </li>
-          )}
-        </Draggable>
-      ))}
-      {provided.placeholder}
-    </ul>
-  )}
-</Droppable>
+          <Droppable droppableId="mediaItems">
+            {(provided) => (
+              <ul className="mediaItems" {...provided.droppableProps} ref={provided.innerRef}>
+                {mediaItems.map(({ imageOrder, name, imageUrl }, index) => (
+                  <Draggable
+                    key={imageOrder}
+                    draggableId={imageOrder}
+                    index={index}
+                  >
+                    {(provided) => (
+                      <li key={imageOrder} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                      
+                        
+                          {/*
+                          <img src={imageUrl} alt={`${name} Thumb`} />
+                        </div>
+                        <p>{name}</p> <br/> <br/>
+                        <p>     duration:{newDuration}</p>
+                        <br/> <br/>
+                        */}
 
+                          
+                       {mediaItems.map((mediaItem, i) => (                    
+                         <MediaItem key={i} {...mediaItem} id={mediaItem.imageOrder} />
+                           
+                          ))}
+                        
+                    
+
+
+
+
+                      </li>
+                    )}
+                  </Draggable>
+                ))}
+                {provided.placeholder}
+              </ul>
+            )}
+          </Droppable>
         </DragDropContext>
 
         <p>
