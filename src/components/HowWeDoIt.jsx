@@ -5,16 +5,18 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 const mediaCategories = [
   {
     imageOrder: '0',
-      duration: 10,
+      duration: 100,
     name: 'Image Gallery',
     imageUrl: './images/image.jpg',
+    imageUrl2: '/targetx-interactive/Home-00.jpg',
     checkbox: true,
   },
   {
     imageOrder: '1',
     duration: 10,
     name: 'Text',
-    imageUrl: './images/image.jpg',
+    imageUrl: './images/image.jpg', 
+    imageUrl2: '/targetx-interactive/Home-01.jpg',
     checkbox: true,
   },
   {
@@ -22,6 +24,7 @@ const mediaCategories = [
     duration: 10,
     name: 'Info Graphic',
     imageUrl: './images/image.jpg',
+    imageUrl2: '/targetx-interactive/Home-02.jpg',
     checkbox: true, 
   },
   {
@@ -29,21 +32,19 @@ const mediaCategories = [
     duration: 10,
     name: '3D',
     imageUrl: './images/image.jpg',
+    imageUrl2: '/targetx-interactive/Home-03.jpg',
     checkbox: true,  
   },
 ];
 
-function GalleryDivUrl({ projectRange, projectNumber, images, loadImages, newDuration }) {
- 
- 
+function GalleryDivUrl({ projectRange, projectNumber, images, loadImages,  mediaItems}) {
   return (
     <div id="gallery1">
-      
- 
-      {images.map((image, i) => (
+      {mediaItems.map((image, i) => (
         <div key={image}>
-         Image No {i} {newDuration}
-          <img src={image} alt={`Image ${i}`} />
+         Image No {i} <br/>
+         Duration: {image.duration}<br/>
+          <img src={image.imageUrl2} alt={`Image ${i}`} />
         </div>
       ))}
 
@@ -62,8 +63,7 @@ export default function HowWeDoIt() {
   const [mediaItems, setMediaItems] = useState(mediaCategories);
 
   const [newOrder, setNewOrder] = useState([0, 1, 2, 3]);
-  const [newDuration,setNewDuration] = useState(10)
-  const [taskList, setTaskList] = useState([])
+   
   const [images, setImages] = useState([
     '/targetx-interactive/Home-00.jpg',
     '/targetx-interactive/Home-01.jpg',
@@ -94,16 +94,17 @@ export default function HowWeDoIt() {
     setMediaItems(items);
     setNewOrder(items.map((item) => Number(item.imageOrder)));
   }
- ///// inputfunctions begin ///////////
+ ///// input functions begin ///////////
 
 
- function updateCheckbox(imageOrder, event) {
-  const localNewCheckboxValue = event.target.checked; // Use 'checked' instead of 'value' for checkbox
+
+ function newMediaObject(imageOrder, event) {
+  const localNewTitle = event.target.value;
 
   setMediaItems((prevMediaItems) =>
     prevMediaItems.map((mediaItem) =>
       mediaItem.imageOrder === imageOrder
-        ? { ...mediaItem, checkbox: localNewCheckboxValue }
+        ? { ...mediaItem, name: localNewTitle }
         : mediaItem
     )
   );
@@ -143,6 +144,7 @@ function updateCheckbox(imageOrder, event) {
   );
 }
 
+ 
 function deleteDiv(imageOrder) {
   setMediaItems((prevMediaItems) =>
     prevMediaItems.filter((mediaItem) => mediaItem.imageOrder !== imageOrder)
@@ -217,12 +219,13 @@ function MediaItem({
  
  <br />
         {/* Pass newOrder (renamed to projectRange) as a prop */}
-        <GalleryDivUrl projectRange={newOrder} images={images} loadImages={loadImages} projectNumber="0" newDuration={newDuration} />
+        <GalleryDivUrl projectRange={newOrder} images={images} loadImages={loadImages} projectNumber="0" mediaItems={mediaItems} />
 
       </div>
       <div id="sidebar" className="content_sub">
         <span className="text-markierung">Drag and Drop</span>
-        <h1> </h1>
+        
+        <br /><button onClick={() => newMediaObject(imageOrder,event)}>new container</button><br />
         <DragDropContext onDragEnd={handleOnDragEnd}>
         <Droppable droppableId="mediaItems">
   {(provided) => (
@@ -251,7 +254,7 @@ function MediaItem({
           {/* Button with debugging console.log    */}
 
    
-          <button onClick={() => loadImages(newOrder)}>Update Order</button>
+        
           </p>
 
         <br />

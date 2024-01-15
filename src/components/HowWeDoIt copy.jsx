@@ -1,31 +1,39 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 
 const mediaCategories = [
   {
-    id: '0',
+    imageOrder: '0',
+      duration: 10,
     name: 'Image Gallery',
-    thumb: './images/image.jpg',
+    imageUrl: './images/image.jpg',
+    checkbox: true,
   },
   {
-    id: '1',
+    imageOrder: '1',
+    duration: 10,
     name: 'Text',
-    thumb: './images/image.jpg',
+    imageUrl: './images/image.jpg',
+    checkbox: true,
   },
   {
-    id: '2',
+    imageOrder: '2',
+    duration: 10,
     name: 'Info Graphic',
-    thumb: './images/image.jpg',
+    imageUrl: './images/image.jpg',
+    checkbox: true, 
   },
   {
-    id: '3',
+    imageOrder: '3',
+    duration: 10,
     name: '3D',
-    thumb: './images/image.jpg',
+    imageUrl: './images/image.jpg',
+    checkbox: true,  
   },
 ];
 
-function GalleryDivUrl({ projectRange, projectNumber, images, loadImages, newDuration }) {
+function GalleryDivUrl({ projectRange, projectNumber, images, loadImages  }) {
  
  
   return (
@@ -34,7 +42,7 @@ function GalleryDivUrl({ projectRange, projectNumber, images, loadImages, newDur
  
       {images.map((image, i) => (
         <div key={image}>
-         Image No {i} {newDuration}
+         Image No {i} 
           <img src={image} alt={`Image ${i}`} />
         </div>
       ))}
@@ -51,34 +59,11 @@ function GalleryDivUrl({ projectRange, projectNumber, images, loadImages, newDur
 }
 
 export default function HowWeDoIt() {
-  const [characters, updateCharacters] = useState(mediaCategories);
-  const [mediaOjects, setMediaObjects] = useState([{
-    imageOrder:0,
-    duration:10,
-    mediaTitle:'Bild',
-    imageUrl: '/targetx-interactive/Home-00.jpg',
-  },
-  {
-    imageOrder:1,
-    duration:10,
-    mediaTitle:"Text",
-    imageUrl: '/targetx-interactive/Home-01.jpg',
-  },
-  {
-    imageOrder:2,
-    duration:10,
-    mediaTitle:"Illustration",
-    imageUrl: '/targetx-interactive/Home-02.jpg',
-  },
-  {
-    imageOrder:3,
-    duration:10,
-    mediaTitle:"3D/Film",
-    imageUrl: '/targetx-interactive/Home-03.jpg',
-  }])
+  const [mediaItems, setMediaItems] = useState(mediaCategories);
+
   const [newOrder, setNewOrder] = useState([0, 1, 2, 3]);
   const [newDuration,setNewDuration] = useState(10)
-  const [taskList, setTaskList] = useState([])
+  
   const [images, setImages] = useState([
     '/targetx-interactive/Home-00.jpg',
     '/targetx-interactive/Home-01.jpg',
@@ -101,41 +86,129 @@ export default function HowWeDoIt() {
   function handleOnDragEnd(result) {
     if (!result.destination) return;
 
-    const items = Array.from(characters);
+    const items = Array.from(mediaItems);
     const [reorderedItem] = items.splice(result.source.index, 1);
     
     items.splice(result.destination.index, 0, reorderedItem);
 
-    updateCharacters(items);
-    setNewOrder(items.map((item) => Number(item.id)));
+    setMediaItems(items);
+    setNewOrder(items.map((item) => Number(item.imageOrder)));
   }
-   // update duration 
-   function updateText(event) {
-    const localNewDuration =  event.target.value  
-    setNewDuration(localNewDuration)
-    setMediaObjects(localNewDuration)
-  
-  }
+ ///// inputfunctions begin ///////////
 
-  // update duration 
-  function updateDuration(event) {
-   const localNewDuration =  event.target.value  
-   setNewDuration(localNewDuration)
-    console.log(id )
-  }
 
-  // delete task
-  function deleteTask(id) {
-    const filteredCharacters = characters.filter(character => character.id !== id);
-    updateCharacters(filteredCharacters);
-  }
-  
-    // delete task
-    function modifyDuration(id) {
-      const filteredCharacters = characters.filter(character => character.id !== id);
-      updateCharacters(filteredCharacters);
-    }
+ function updateCheckbox(imageOrder, event) {
+  const localNewCheckboxValue = event.target.checked; // Use 'checked' instead of 'value' for checkbox
 
+  setMediaItems((prevMediaItems) =>
+    prevMediaItems.map((mediaItem) =>
+      mediaItem.imageOrder === imageOrder
+        ? { ...mediaItem, checkbox: localNewCheckboxValue }
+        : mediaItem
+    )
+  );
+}
+
+
+function updateTitle(imageOrder, event) {
+  const localNewTitle = event.target.value;
+
+  setMediaItems((prevMediaItems) =>
+    prevMediaItems.map((mediaItem) =>
+      mediaItem.imageOrder === imageOrder
+        ? { ...mediaItem, name: localNewTitle }
+        : mediaItem
+    )
+  );
+}
+function updateDuration(imageOrder, event) {
+  const localNewDuration = event.target.value;
+
+  setMediaItems((prevMediaItems) =>
+    prevMediaItems.map((mediaItem) =>
+      mediaItem.imageOrder === imageOrder
+        ? { ...mediaItem, duration: parseInt(localNewDuration, 10) }
+        : mediaItem
+    )
+  );
+}
+function updateCheckbox(imageOrder, event) {
+  const localNewDuration = event.target.checked;
+  setMediaItems((prevMediaItems) =>
+    prevMediaItems.map((mediaItem) =>
+      mediaItem.imageOrder === imageOrder
+        ? { ...mediaItem, checkbox: localNewDuration }
+        : mediaItem
+    )
+  );
+}
+
+function deleteDiv(imageOrder) {
+  setMediaItems((prevMediaItems) =>
+    prevMediaItems.filter((mediaItem) => mediaItem.imageOrder !== imageOrder)
+  );
+}
+///// inputfunctions end ///////////
+
+///// mediatiem begin ///////////
+
+function MediaItem({
+  imageOrder,
+  duration,
+  name,
+  imageUrl,
+  loop,
+  id,
+  checkbox,
+}) {
+  return (
+    <div>
+      <hr />
+      <h3>{name}</h3>
+      <input
+        type="string"
+        id={imageOrder}
+        name="name"
+        defaultValue={
+          mediaItems.find((obj) => obj.imageOrder === imageOrder)?.name || ""
+        }
+        onChange={(event) => updateTitle(imageOrder, event)}
+      />
+      <br />
+      <span>Order: {imageOrder}</span>
+      <br />
+      <span>Duration: {duration}</span>
+      <input
+        type="number"
+        id={imageOrder}
+        name="duration"
+        defaultValue={
+          mediaItems.find((obj) => obj.imageOrder === imageOrder)?.duration ||
+          ""
+        }
+        onChange={(event) => updateDuration(imageOrder, event)}
+      />
+      <br />
+      <br />
+      <span>Loop: {loop}</span>
+      <br />
+      <input
+        type="checkbox"
+        id={imageOrder}
+        name="checkbox"
+        checked={checkbox}
+        onChange={(event) => updateCheckbox(imageOrder, event)}
+      />
+      <br />
+      <div className="characters-thumb">
+      <img src={imageUrl} alt={name}  />
+      </div>
+      <br /> <br />
+      <button onClick={() => deleteDiv(imageOrder)}>delete</button>
+    </div>
+  );
+}
+//  mediaitem end
 
   return (
     <div className="content_container" id="main">
@@ -151,50 +224,27 @@ export default function HowWeDoIt() {
         <span className="text-markierung">Drag and Drop</span>
         <h1> </h1>
         <DragDropContext onDragEnd={handleOnDragEnd}>
-          <Droppable droppableId="characters">
-            {(provided) => (
-              <ul className="characters" {...provided.droppableProps} ref={provided.innerRef}>
-                {characters.map(({ id, name, thumb }, index) => (
-                  <Draggable
-                    key={id}
-                    draggableId={id}
-                    index={index}
-                  >
-                    {(provided) => (
-                      <li key={id} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                        <div className="characters-thumb">
-                          <img src={thumb} alt={`${name} Thumb`} />
-                        </div>
-                        <p>{name}</p> <br/> <br/>
-                        <p>     duration:{newDuration}</p>
-                        <br/> <br/>
-                         
-                        <input 
-                        type="number"
-                        id={id}
-                      //  value={id}
-                        name="duration"
-                   
-                       onChange={updateDuration}
-                         />
+        <Droppable droppableId="mediaItems">
+  {(provided) => (
+    <ul className="mediaItems" {...provided.droppableProps} ref={provided.innerRef}>
+      {mediaItems.map(({ imageOrder, name, imageUrl }, index) => (
+        <Draggable
+          key={imageOrder}
+          draggableId={imageOrder}
+          index={index}
+        >
+          {(provided) => (
+            <li key={imageOrder} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+              <MediaItem {...mediaItems[index]} />
+            </li>
+          )}
+        </Draggable>
+      ))}
+      {provided.placeholder}
+    </ul>
+  )}
+</Droppable>
 
-                        <input 
-                        type="text"
-                        id={id}
-                        name="text"
-                    //  onChange={() => updateText(id)}
-                     //   onChange={updateDuration}
-                     />
-                        <button onClick={() => deleteTask(id)} type="button">-</button>
-
-                      </li>
-                    )}
-                  </Draggable>
-                ))}
-                {provided.placeholder}
-              </ul>
-            )}
-          </Droppable>
         </DragDropContext>
 
         <p>
@@ -206,10 +256,7 @@ export default function HowWeDoIt() {
 
         <br />
         <br />
-                      Titel string <br />
-                      Duration number  <br />
-                      Speed number  <br />
-                      Checkbox boolean<br />
+                 
         <div className="clear"></div>
       </div>
     </div>
