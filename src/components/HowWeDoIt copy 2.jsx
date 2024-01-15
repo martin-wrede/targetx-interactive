@@ -37,7 +37,7 @@ const mediaCategories = [
   },
 ];
 
-function GalleryDivUrl({ projectRange, projectNumber, images, loadImages,  mediaItems}) {
+function GalleryDivUrl({ projectRange,  mediaItems}) {
   return (
     <div id="gallery1">
       {mediaItems.map((image, i) => (
@@ -159,6 +159,7 @@ function MediaItem({
   duration,
   name,
   imageUrl,
+  imageUrl2,
   loop,
   id,
   checkbox,
