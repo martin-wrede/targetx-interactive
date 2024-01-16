@@ -45,6 +45,15 @@ function HowWeDoIt() {
     setNewOrder((prevOrder) => prevOrder.map((item) => Number(item.imageOrder)));
   }
 
+  function updateMediaContainer(imageOrder, property, value) {
+    const newImageOrder = mediaItems.length
+    const newItem =   { imageOrder: newImageOrder, duration: 10, name: 'Image Gallery', imageUrl: '/targetx-interactive/Home-00.jpg', checkbox: true }
+    setMediaItems(  [...mediaItems,  newItem ])
+  
+
+  }
+
+
   function updateMediaItem(imageOrder, property, value) {
     setMediaItems((prevMediaItems) =>
       prevMediaItems.map((mediaItem) =>
@@ -69,7 +78,7 @@ function HowWeDoIt() {
       <div id="sidebar" className="content_sub">
         <span className="text-markierung">Drag and Drop</span>
         <br />
-        <button onClick={() => updateMediaItem(imageOrder, 'name', 'New Container')}>
+        <button onClick={() => updateMediaContainer()}>
           new container
         </button>
         <br />

@@ -98,13 +98,20 @@ function HowWeDoIt() {
                         <div>
                           <hr />
                           <h3>{name}</h3>
-                          <input
-                            type="string"
-                            id={imageOrder}
-                            name="name"
-                            defaultValue={name}
-                            onChange={(event) => updateMediaItem(imageOrder, 'name', event.target.value)}
-                          />
+                          <br/>
+                          <select
+                          id={imageOrder}
+                          name="name"
+                          style={{ width: "100%" }}
+                          onChange={(event) => updateMediaItem(imageOrder, 'name', event.target.value)}
+                          >
+  <option value="Image-Gallery">Image Gallery</option>
+  <option value="Text">Text</option>
+  <option value="Info-Graphic">Info Graphic</option>
+  <option value="3D, Video">3D, Video</option>
+</select>
+
+                          
                           <br />
                           <span>Order: {imageOrder}</span>
                           <br />
