@@ -8,7 +8,7 @@ const mediaCategories = [
   { imageOrder: '3', duration: 10, name: '3D', imageUrl: '/targetx-interactive/Home-03.jpg', checkbox: true },
 ];
 
-function GalleryDivUrl({ projectRange, mediaItems }) {
+function GalleryDivUrl({ mediaItems }) {
   return (
     <div id="gallery1">
       {mediaItems.map((image, i) => (
@@ -23,7 +23,7 @@ function GalleryDivUrl({ projectRange, mediaItems }) {
       <div className="gallery-3d"></div>
       <div className="gallery-menu"></div>
 
-      {projectRange && projectRange.map((el, i) => <span key={i}> {el} / </span>)}
+      {mediaItems && mediaItems.map((el, i) => <span key={i}> {el.imageOrder} / </span>)}
     </div>
   );
 }
@@ -42,17 +42,14 @@ function HowWeDoIt() {
       return items;
     });
 
-    setNewOrder((prevOrder) => prevOrder.map((item) => Number(item.imageOrder)));
   }
 
   function updateMediaContainer(imageOrder, property, value) {
     const newImageOrder = mediaItems.length
-    const newItem =   { imageOrder: newImageOrder, duration: 10, name: 'Image Gallery', imageUrl: '/targetx-interactive/Home-00.jpg', checkbox: true }
-    setMediaItems(  [...mediaItems,  newItem ])
-  
-
+    const newItem =   { imageOrder: newImageOrder, duration: 10, name: 'Image Gallery', 
+    imageUrl: '/targetx-interactive/Home-00.jpg', checkbox: true }
+    setMediaItems(  [ newItem , ...mediaItems])
   }
-
 
   function updateMediaItem(imageOrder, property, value) {
     setMediaItems((prevMediaItems) =>
@@ -72,7 +69,7 @@ function HowWeDoIt() {
     <div className="content_container" id="main">
       <div className="content_main" id="content">
         <h1 className="page-title entry-title">How we do it</h1>
-        <GalleryDivUrl projectRange={newOrder} mediaItems={mediaItems} />
+        <GalleryDivUrl  mediaItems={mediaItems} />
       </div>
 
       <div id="sidebar" className="content_sub">
@@ -84,6 +81,7 @@ function HowWeDoIt() {
         <br />
         <DragDropContext onDragEnd={handleOnDragEnd}>
           <Droppable droppableId="mediaItems">
+        
             {(provided) => (
               <ul className="mediaItems" {...provided.droppableProps} ref={provided.innerRef}>
                 {mediaItems.map(({ imageOrder, name, imageUrl, duration, checkbox }, index) => (
@@ -105,11 +103,11 @@ function HowWeDoIt() {
                           style={{ width: "100%" }}
                           onChange={(event) => updateMediaItem(imageOrder, 'name', event.target.value)}
                           >
-  <option value="Image-Gallery">Image Gallery</option>
-  <option value="Text">Text</option>
-  <option value="Info-Graphic">Info Graphic</option>
-  <option value="3D, Video">3D, Video</option>
-</select>
+                          <option value="Image-Gallery">Image Gallery</option>
+                          <option value="Text">Text</option>
+                          <option value="Info-Graphic">Info Graphic</option>
+                          <option value="3D, Video">3D, Video</option>
+                        </select>
 
                           
                           <br />
@@ -146,13 +144,15 @@ function HowWeDoIt() {
                   </Draggable>
                 ))}
                 {provided.placeholder}
+               
               </ul>
+              
             )}
           </Droppable>
         </DragDropContext>
 
         <p>{/* Button with debugging console.log */}</p>
-
+        
         <br />
         <br />
         <div className="clear"></div>
