@@ -5,7 +5,7 @@ const mediaCategories = [
   { imageOrder: '0', duration: 100, name: 'Image Gallery', mediaNumber: '0', imageUrl: '/targetx-interactive/Home-00.jpg', checkbox: true },
   { imageOrder: '1', duration: 10, name: 'Text',  mediaNumber: '1', imageUrl: '/targetx-interactive/Home-01.jpg', checkbox: true },
   { imageOrder: '2', duration: 10, name: 'Info Graphic', mediaNumber: '2', imageUrl: '/targetx-interactive/Home-02.jpg', checkbox: true },
-  { imageOrder: '3', duration: 10, name: '3D/Video', mediaNumber: '3', imageUrl: '/targetx-interactive/Home-03.jpg', checkbox: true },
+  { imageOrder: '3', duration: 10, name: '3D', mediaNumber: '3', imageUrl: '/targetx-interactive/Home-03.jpg', checkbox: true },
 ];
 
 function GalleryDivUrl({ mediaItems }) {
@@ -43,47 +43,20 @@ function HowWeDoIt() {
     });
   }
 
-  function updateMediaContainer() {
+  function updateMediaContainer(imageOrder, property, value) {
     const newImageOrder = mediaItems.length.toString();
+
    // console.log(value)
+
+
+     
     const newItem = { imageOrder: newImageOrder, duration: 10, name: 'Image Gallery', 
+ 
     imageUrl: `/targetx-interactive/Home-00.jpg`, checkbox: true };
     setMediaItems([newItem, ...mediaItems]);
   }
 
   function updateMediaItem(imageOrder, property, value) {
-  setMediaItems((prevMediaItems) =>
-    prevMediaItems.map((mediaItem) => {
-      if (mediaItem.imageOrder === imageOrder) {
-        // Update the property value
-        const updatedMediaItem = { ...mediaItem, [property]: value };
-
-        // Update the imageUrl based on the new name
-        if (value === 'Text') {
-          updatedMediaItem.imageUrl = `/targetx-interactive/Home-01.jpg`;
-        } else if (value === 'Info-Graphic') {
-          updatedMediaItem.imageUrl = `/targetx-interactive/Home-02.jpg`;
-        } else if (value === '3D/Video') {
-          updatedMediaItem.imageUrl = `/targetx-interactive/Home-03.jpg`;
-        } else {
-          // Default to Image Gallery
-          updatedMediaItem.imageUrl = `/targetx-interactive/Home-00.jpg`;
-        }
-
-        return updatedMediaItem;
-      } else {
-        return mediaItem;
-      }
-    })
-  );
-}
-
-
-
-
-  function updateMediaItem2(imageOrder, property, value) {
-    console.log(value)
-
     setMediaItems((prevMediaItems) =>
       prevMediaItems.map((mediaItem) =>
         mediaItem.imageOrder === imageOrder ? { ...mediaItem, [property]: value } : mediaItem
@@ -136,7 +109,7 @@ function HowWeDoIt() {
                         <option value="Image-Gallery">Image Gallery</option>
                         <option value="Text">Text</option>
                         <option value="Info-Graphic">Info Graphic</option>
-                        <option value="3D/Video">3D/Video</option>
+                        <option value="3D, Video">3D, Video</option>
                       </select>
 
                         
@@ -164,13 +137,7 @@ function HowWeDoIt() {
                         />
                         <br />
                         <div className="characters-thumb">
-
-                          <img 
-                          
-                          src={imageUrl} 
-                     
-                       
-                          alt={name} />
+                          <img src={imageUrl} alt={name} />
                         </div>
                         <br /> <br />
                         <button onClick={() => deleteDiv(imageOrder)}>delete</button>
