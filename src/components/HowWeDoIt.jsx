@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 const mediaCategories = [
-  { imageOrder: '0', duration: 100, name: 'Image Gallery', mediaNumber: '0', imageUrl: '/targetx-interactive/Home-00.jpg', checkbox: true },
+  { imageOrder: '0', duration: 10, name: 'Image Gallery', mediaNumber: '0', imageUrl: '/targetx-interactive/Home-00.jpg', checkbox: true },
   { imageOrder: '1', duration: 10, name: 'Text',  mediaNumber: '1', imageUrl: '/targetx-interactive/Home-01.jpg', checkbox: true },
   { imageOrder: '2', duration: 10, name: 'Info Graphic', mediaNumber: '2', imageUrl: '/targetx-interactive/Home-02.jpg', checkbox: true },
   { imageOrder: '3', duration: 10, name: '3D/Video', mediaNumber: '3', imageUrl: '/targetx-interactive/Home-03.jpg', checkbox: true },
@@ -81,15 +81,6 @@ function HowWeDoIt() {
 
 
 
-  function updateMediaItem2(imageOrder, property, value) {
-    console.log(value)
-
-    setMediaItems((prevMediaItems) =>
-      prevMediaItems.map((mediaItem) =>
-        mediaItem.imageOrder === imageOrder ? { ...mediaItem, [property]: value } : mediaItem
-      )
-    );
-  }
 
   function deleteDiv(imageOrder) {
     setMediaItems((prevMediaItems) =>
@@ -143,6 +134,7 @@ function HowWeDoIt() {
                         <br />
                         <span>Order: {imageOrder}</span>
                         <br />
+                        {/*
                         <span>Duration: {duration}</span>
                         <input
                           type="number"
@@ -153,6 +145,7 @@ function HowWeDoIt() {
                         />
                         <br />
                         <br />
+                        */}
                         <span>Checkbox: {checkbox}</span>
                         <br />
                         <input
