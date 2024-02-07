@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 const mediaCategories = [
@@ -8,39 +8,23 @@ const mediaCategories = [
   { imageOrder: '3', duration: 10, name: '3D/Video', mediaNumber: '3', imageUrl: '/targetx-interactive/Home-03.jpg', checkbox: true },
 ];
 
-function LocalGallery({ mediaItems }){
-  const [counter, setCounter] = useState(0);
-
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCounter((prevCounter) => (prevCounter + 1) % mediaItems.length);
-    }, 2000);
-
-    return () => clearInterval(intervalId); // Cleanup function
-  }, [mediaItems.length]);
-
-
-return  (
-  <>
-  {mediaItems[counter].name}
-  <img src={mediaItems[counter].imageUrl}  />
-  </>
-  )
-}
-
 function GalleryDivUrl({ mediaItems }) {
   return (
-    <div id="gallery">
-      
-      <div id="gallery0">
-        Gallery <LocalGallery  mediaItems={mediaItems} />
+    <div id="gallery1">
+      {mediaItems.map((image, i) => (
+        <div key={image.imageOrder}>
+          Image No {i} <br />
+          Duration: {image.duration}<br />
+          <img src={image.imageUrl} alt={`Image ${i}`} />
         </div>
-   
+      ))}
+
+      <div id="layer1"></div>
+      <div className="gallery-3d"></div>
+      <div className="gallery-menu"></div>
 
       {mediaItems && mediaItems.map((el, i) => <span key={i}> {el.imageOrder} / </span>)}
     </div>
-   
   );
 }
 
