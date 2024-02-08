@@ -23,7 +23,10 @@ export default function Gallery({ projectNumber }) {
      //   console.log(data);
         setData(data);
       } catch (error) {
-        console.error(error);
+        console.e
+        {/* 
+        <img src={Rechteck} id="stop" onClick={() => clearInterval(timerRef.current)} className='gallery-menu-icon' />
+        */}rror(error);
       }
     };
   
@@ -118,9 +121,6 @@ export default function Gallery({ projectNumber }) {
           onClick={() => nextImageForward(1)}
           className="gallery-menu-icon"
         />
-        {/* 
-        <img src={Rechteck} id="stop" onClick={() => clearInterval(timerRef.current)} className='gallery-menu-icon' />
-        */}
       </div>
 
       {/* {project} */}

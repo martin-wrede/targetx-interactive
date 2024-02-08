@@ -8,9 +8,8 @@ const mediaCategories = [
   { imageOrder: '3', duration: 10, name: '3D/Video', mediaNumber: '3', imageUrl: '/targetx-interactive/Home-03.jpg', checkbox: true },
 ];
 
-function LocalGallery({ mediaItems }){
+function LocalGallery({ mediaItems }) {
   const [counter, setCounter] = useState(0);
-
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -20,14 +19,19 @@ function LocalGallery({ mediaItems }){
     return () => clearInterval(intervalId); // Cleanup function
   }, [mediaItems.length]);
 
-
-return  (
-  <>
-  {mediaItems[counter].name}
-  <img src={mediaItems[counter].imageUrl}  />
-  </>
-  )
+  // Add a check to ensure mediaItems and mediaItems[counter] are defined before accessing properties
+  return (
+    <>
+      {mediaItems.length > 0 && mediaItems[counter] && (
+        <>
+          {mediaItems[counter].name}
+          <img src={mediaItems[counter].imageUrl} alt={mediaItems[counter].name} />
+        </>
+      )}
+    </>
+  );
 }
+
 
 function GalleryDivUrl({ mediaItems }) {
   return (
