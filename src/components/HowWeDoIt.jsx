@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 const mediaCategories = [
-  { imageOrder: '0', duration: 10, name: 'Image Gallery', mediaNumber: '0', imageUrl: '/targetx-interactive/Home-00.jpg', checkbox: true },
-  { imageOrder: '1', duration: 10, name: 'Text',  mediaNumber: '1', imageUrl: '/targetx-interactive/Home-01.jpg', checkbox: true },
-  { imageOrder: '2', duration: 10, name: 'Info Graphic', mediaNumber: '2', imageUrl: '/targetx-interactive/Home-02.jpg', checkbox: true },
-  { imageOrder: '3', duration: 10, name: '3D/Video', mediaNumber: '3', imageUrl: '/targetx-interactive/Home-03.jpg', checkbox: true },
+  { imageOrder: '0', duration: 10, name: 'Image Gallery', title:'Photos', mediaNumber: '0', imageUrl: '/targetx-interactive/Home-00.jpg', checkbox: true },
+  { imageOrder: '1', duration: 10, name: 'Text', title:'Introtext', mediaNumber: '1', imageUrl: '/targetx-interactive/Home-01.jpg', checkbox: true },
+  { imageOrder: '2', duration: 10, name: 'Info Graphic',title:'This is an information on an info-graphice', mediaNumber: '2', imageUrl: '/targetx-interactive/Home-02.jpg', checkbox: true },
+  { imageOrder: '3', duration: 10, name: '3D/Video',title:'3d Numbers', mediaNumber: '3', imageUrl: '/targetx-interactive/Home-03.jpg', checkbox: true },
 ];
 
 function LocalGallery({ mediaItems }) {
@@ -24,7 +24,9 @@ function LocalGallery({ mediaItems }) {
     <>
       {mediaItems.length > 0 && mediaItems[counter] && (
         <>
-          {mediaItems[counter].name}
+          {mediaItems[counter].name} 
+          <br/>
+          {mediaItems[counter].title}
           <img src={mediaItems[counter].imageUrl} alt={mediaItems[counter].name} />
         </>
       )}
@@ -125,7 +127,7 @@ function HowWeDoIt() {
           <Droppable droppableId="mediaItems" type="MEDIA_ITEM">
             {(provided) => (
               <ul className="mediaItems" {...provided.droppableProps} ref={provided.innerRef}>
-                {mediaItems.map(({ imageOrder, name, imageUrl, duration, checkbox }, index) => (
+                {mediaItems.map(({ imageOrder, name, imageUrl,title, duration, checkbox }, index) => (
                   <Draggable key={imageOrder} draggableId={imageOrder} index={index}>
                   {(provided) => (
                     <li
@@ -153,6 +155,16 @@ function HowWeDoIt() {
                         
                         <br />
                         <span>Order: {imageOrder}</span>
+                        <br />
+
+                        <span>Title: {title}</span>
+                        <input
+                          type="text"
+                          id={imageOrder}
+                          name="title"
+                          defaultValue={title}
+                          onChange={(event) => updateMediaItem(imageOrder, 'title', event.target.value)}                        />
+                        <br />
                         <br />
                         {/*
                         <span>Duration: {duration}</span>
@@ -202,16 +214,7 @@ function HowWeDoIt() {
             {(provided) => (
               <div {...provided.droppableProps} ref={provided.innerRef}>
                 {/* Placeholder for the new container */}
-                <div
-                  style={{
-                    border: '1px dashed #ccc',
-                    padding: '10px',
-                    margin: '10px',
-                    backgroundColor: '#f5f5f5',
-                  }}
-                >
-                  New Container
-                </div>
+                
                 {provided.placeholder}
               </div>
             )}
