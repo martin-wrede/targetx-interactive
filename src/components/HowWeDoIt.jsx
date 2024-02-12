@@ -64,14 +64,29 @@ function HowWeDoIt() {
       return items;
     });
   }
-
-  function updateMediaContainer() {
-    const newImageOrder = mediaItems.length.toString();
-   // console.log(value)
-    const newItem = { imageOrder: newImageOrder, duration: 10, name: 'Image Gallery', 
-    imageUrl: `/targetx-interactive/Home-00.jpg`, checkbox: true };
-    setMediaItems([newItem, ...mediaItems]);
+// add new container
+function updateMediaContainer() {
+  // Find the maximum imageOrder in mediaItems
+  const maxImageOrder = Math.max(...mediaItems.map(item => parseInt(item.imageOrder)));
+  
+  // Calculate a unique new imageOrder
+  let newImageOrder = maxImageOrder >= 0 ? maxImageOrder + 1 : 0;
+  while (mediaItems.some(item => item.imageOrder === newImageOrder.toString())) {
+    // If the new imageOrder already exists, increment it until it's unique
+    newImageOrder++;
   }
+
+  const newItem = { 
+    imageOrder: newImageOrder.toString(), 
+    duration: 10, 
+    name: 'Image Gallery', 
+    imageUrl: `/targetx-interactive/Home-00.jpg`, 
+    checkbox: true 
+  };
+  setMediaItems([newItem, ...mediaItems]);
+}
+
+  
 
   function updateMediaItem(imageOrder, property, value) {
   setMediaItems((prevMediaItems) =>
