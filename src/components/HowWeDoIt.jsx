@@ -146,6 +146,7 @@ function updateMediaContainer() {
                   <Draggable key={imageOrder} draggableId={imageOrder} index={index}>
                   {(provided) => (
                     <li
+                    className="mediaList" 
                       key={imageOrder}
                       ref={provided.innerRef}
                       {...provided.draggableProps}
@@ -153,8 +154,16 @@ function updateMediaContainer() {
                     >
                       <div>
                         <hr />
-                        <h3>name: {name}</h3>
-                        <br/>
+                        <h3>Category: ({imageOrder}) {name}</h3>
+                       
+                        <div className="characters-thumb">
+                        <img 
+                        src={imageUrl} 
+                        className="imageIcon"
+                        alt={name} />
+                         </div>
+                     
+                       
                         <select
                         id={imageOrder}
                         name="name"
@@ -167,12 +176,9 @@ function updateMediaContainer() {
                         <option value="3D/Video">3D/Video</option>
                       </select>
 
-                        
-                        <br />
-                        <span>Order: {imageOrder}</span>
-                        <br />
+                         
 
-                        <span>Title: {title}</span>
+                        <span>Title: </span>
                         <input
                           type="text"
                           id={imageOrder}
@@ -180,7 +186,7 @@ function updateMediaContainer() {
                           defaultValue={title}
                           onChange={(event) => updateMediaItem(imageOrder, 'title', event.target.value)}                        />
                         <br />
-                        <br />
+                      
                         {/*
                         <span>Duration: {duration}</span>
                         <input
@@ -193,8 +199,9 @@ function updateMediaContainer() {
                         <br />
                         <br />
                         */}
-                        <span>Checkbox: {checkbox}</span>
-                        <br />
+                  
+                        <span>Checkbox: </span>
+                        
                         <input
                           type="checkbox"
                           id={imageOrder}
@@ -203,17 +210,12 @@ function updateMediaContainer() {
                           onChange={(event) => updateMediaItem(imageOrder, 'checkbox', event.target.checked)}
                         />
                         <br />
-                        <div className="characters-thumb">
-
-                          <img 
-                          
-                          src={imageUrl} 
-                     
-                       
-                          alt={name} />
-                        </div>
-                        <br /> <br />
-                        <button onClick={() => deleteDiv(imageOrder)}>delete</button>
+                         
+                         
+                        <button 
+                        className="button"
+                        onClick={() => deleteDiv(imageOrder)}>delete</button>
+                        <br />
                       </div>
                     </li>
                   )}

@@ -429,7 +429,8 @@ img {
     margin-top:20px;
    }
   
-   h3, .text-markierung {
+   
+   , .text-markierung {
     color: white;
     background-color:black;
     margin-bottom:10px;
@@ -748,6 +749,8 @@ img {
   }
   
   .characters-thumb {
+    position:relative;
+    top:-30px;
     overflow: hidden;
     flex-shrink: 0;
     width: 2em;
@@ -758,7 +761,30 @@ img {
   }
   
   .characters-thumb img {
+    
     display: block;
     width: 100%;
     height: auto;
+    
   }
+
+  .mediaItems{
+    list-style-type: none;
+    padding:0px; 
+
+   
+     
+  }
+  .mediaList:hover{
+    background-color:rgba(255, 255, 255, 0.7);
+   
+  }
+  .mediaList{
+     
+  }
+  .button{
+    margin:10px;
+  }
+    
+   
+  
