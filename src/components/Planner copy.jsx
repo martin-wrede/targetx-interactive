@@ -4,7 +4,7 @@ import Gallery from './Gallery';
 import { Context } from '../Context';
 
 
-export default function Chatbot(){
+export default function Planner(){
   const {data} = useContext(Context)
      
 

@@ -5,11 +5,9 @@ import Gallery from './Gallery';
 import { Context } from '../Context';
 
 
-export default function Kontakt(){
+export default function About(){
   const {data} = useContext(Context)
-     
-
-
+  
   let content = null
   if (data[7] && data[7].content_chapter) {
     content = data[7].content_chapter.map((chapter, index) => (
@@ -27,10 +25,10 @@ export default function Kontakt(){
     
   return (
         <div>
-  <br />
+  
   <div className="content_container" id="main">
     <div className="content_main" id="content">
-      {content}
+    <h1>About</h1>
      
           <p>targetx Medien-Design</p>
           <p>
@@ -67,10 +65,7 @@ export default function Kontakt(){
       
 
     <div id="sidebar" className="content_sub">
-       <span className="text-markierung"
-          dangerouslySetInnerHTML={{ __html:data[7] && data[7].sidebar_h2}}   
-       >
-      </span>
+       
 
       
       <br />

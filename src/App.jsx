@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
-import Konzept from './components/Konzept';
-import Chatbot from './components/Chatbot';
-import ImageGeneration from './components/ImageGeneration';
-import Kontakt from './components/Kontakt';
+import HowItWorks from './components/HowItWorks';
+import Planner from './components/Planner';
+import Daily from './components/Daily';
+import About from './components/About';
 
  import './App.css';
 
@@ -16,11 +16,10 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/konzept" element={<Konzept />} />
-          <Route path="/chatbot" element={<Chatbot/>} />
-        
-          <Route path="/image-generation" element={<ImageGeneration />} />
-          <Route path="/kontakt" element={<Kontakt />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
+          <Route path="/planner" element={<Planner />} />
+             <Route path="/daily" element={<Daily />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </div>
     

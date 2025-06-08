@@ -284,15 +284,19 @@ img {
        margin-top:2px;
        margin-right:0px;
        left: 0px;
-   }}
+   }}w
   header {
     background-color: #fff;
     margin: 0 auto;
     padding: 0px; }
+
+  .content_container{
+    
+  }
   
   .content_main, .content_sub {
      /* background: url("files/blau.png") 40%;*/
-    background-color:#d3e0ee;
+    background-color:#fff;
     width: 54%; /* 49%; */
     padding: 3%;
     font-size: 90%;
@@ -300,7 +304,7 @@ img {
   }
   
   .content_sub {
-    background: url("assets/blau-streifen.png") 100%;
+    background-color:#fff;
     width: 36%; /* 39%; */
     padding: 2%; /* 3%; */
     font-size: 0.8rem;

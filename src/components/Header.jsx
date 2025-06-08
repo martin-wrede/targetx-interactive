@@ -6,14 +6,18 @@ import Logo from '../assets/targetx-logo-outl.svg';
 // ✅ Extracted reusable language switcher
 function LanguageSwitcher({ language, changeLanguage }) {
   return (
+   
     <div className="language-switcher">
+       {/*
       <button className="button" onClick={() => changeLanguage("de")} disabled={language === "de"}>
         DE
       </button>
       <button className="button" onClick={() => changeLanguage("en")} disabled={language === "en"}>
         EN
       </button>
+      */}
     </div>
+    
   );
 }
 
@@ -57,27 +61,10 @@ export default function Header() {
         {/* ✅ Conditional display of menu */}
         <div id="menu" style={{ display: isMobile && !menuShown ? 'none' : 'block', opacity: isMobile && !menuShown ? 0 : 1 }}>
           <ul>
-              <li>
-              <Link to="/konzept" onClick={toggleMenu}>  {
-              language === "de" ? "Konzept" : "Concept"
-              }</Link>
-            </li>
-          
-            <li>
-              <Link to="/chatbot" onClick={toggleMenu}>  {
-              language === "de" ? "Chatbot" : "Chatbot"
-              }</Link>
-            </li>
-              <li>
-              <Link to="/image-generation" onClick={toggleMenu}>  {
-              language === "de" ? "Image Generation" : "Image Generation"
-              }</Link>
-            </li>
-            <li>
-              <Link to="/kontakt" onClick={toggleMenu}> {
-              language === "de" ? "Kontakt" : "Contact"
-              }</Link>
-            </li>
+            <li><Link to="/how-it-works">How It Works</Link></li>
+        <li><Link to="/planner">Try the Planner</Link></li>
+        <li><Link to="/daily">Daily Motivation</Link></li>
+        <li><Link to="/about">About</Link></li>
           </ul>
         </div>
       </nav>

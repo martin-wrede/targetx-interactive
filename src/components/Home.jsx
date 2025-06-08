@@ -7,14 +7,13 @@ export default function Home() {
 
   return (
     <div>
-<br/>
-   <Gallery  projectNumber="0" />
-   
-      <h1>{data[0] && data[0].gallery_image_title}</h1>
-      <h2>{data[0] && data[0].content_h1}</h2>
-      <span>
-        <i>{data[0] && data[0].content_h1_text}</i>
-      </span>
+  <div className="content_container" id="main"> 
+      <div className="content_main" id="content">
+      <h1>Home</h1>
+  
+         <Gallery  projectNumber="0" />
+         </div>
+         </div>
     </div>
   );
 }
