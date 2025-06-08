@@ -1,9 +1,9 @@
 [
   {
       "gallery_image_title": "Welcome to targetx",
-      "gallery_images": 5,
+      "gallery_images": 1,
     "gallery_image_names": [
-      "/targetx-website/Home-01.jpg",  "/targetx-website/Home-02.jpg","/targetx-website/Home-03.jpg",  "/targetx-website/Home-04.jpg", "/targetx-website/Home-05.jpg"
+      "/targetx-website/Home-01.jpg",  
     ],
     "gallery_image_title2": "Reise",
     
