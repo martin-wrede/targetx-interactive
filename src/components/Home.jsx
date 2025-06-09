@@ -7,13 +7,10 @@ export default function Home() {
 
   return (
     <div>
-  <div className="content_container" id="main"> 
-      <div className="content_main" id="content">
+ 
       <h1>Home</h1>
   
          <Gallery  projectNumber="0" />
          </div>
-         </div>
-    </div>
-  );
+  )
 }
