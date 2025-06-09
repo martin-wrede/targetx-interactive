@@ -53,7 +53,7 @@ export default function Daily() {
        
         <br />
         <br />
-        {data[1] &&  <img src={`${data[1].sidebar_image}`} />}
+        {data[3] &&  <img src={`${data[3].sidebar_image}`} />}
         
         <br />
         <br />

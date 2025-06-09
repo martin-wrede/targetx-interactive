@@ -1,9 +1,9 @@
 [
   {
     "gallery_image_title": "Willkommen bei targetx",
-    "gallery_images": 1,
+    "gallery_images": 3,
     "gallery_image_names": [
-      "/targetx-interactive/Home_01.jpg",
+      "/targetx-interactive/Home_01.jpg", "/targetx-interactive/Home_02.jpg", "/targetx-interactive/Home_03.jpg"
     ],
     "gallery_image_title2": "",
     "sidebar_h2": "",
@@ -67,8 +67,8 @@
     "gallery_image_names": [
       ""
     ],
-    "sidebar_h2": "Plakat-Design",
-    "sidebar_image": "/targetx-interactive/motivation.jpg",
+    "sidebar_h2": "<Motivation",
+    "sidebar_image": "/targetx-interactive/motivation.jpg",      
     "sidebar_text": "",
         "content_chapter": [
       {
@@ -88,12 +88,12 @@
     "gallery_image_title1": "Lakonia",
     "gallery_images1": 1,
     "gallery_image_names": [
-      "/targetx-interactive/Lakonia-01.jpg",
+      "/targetx-interactive/Lakonia-01.jpg"
     ],
     "gallery_image_title2": "Reise",
     "gallery_images2": 1,
     "gallery_image2_names": [
-      "/targetx-interactive/Reise-01.jpg", 
+      "/targetx-interactive/Reise-01.jpg"
     ],
     "sidebar_image": "",
     "sidebar_text": "",
@@ -119,7 +119,7 @@
         "content_h2_text2": "Corporate Design, Visuelles Ausstellungskonzept, Informationsmaterial, Fotografie",
         "button": "",
         "button_url": ""
-      },
+      }
     ]
   },
   {
