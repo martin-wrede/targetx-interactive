@@ -34,7 +34,7 @@ export default function About(){
           <p>
             Martin Wrede
             <br />
-            Dipl. Grafik-Designer
+            
           </p>
           <p>
             Kameruner Straße 49
@@ -70,7 +70,9 @@ export default function About(){
       
       <br />
       <br />
-      {data[7] && <img src={`${data[7].sidebar_image}`} alt="" />}
+      {data[7] && <img src={`${data[7].sidebar_image}`} alt="Contact"
+      title="Contact"
+       />}
     </div>
   </div>
 </div>

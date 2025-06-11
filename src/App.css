@@ -354,16 +354,20 @@ img {
         margin-right: 4%; } }
   
   .logo {
+    
     margin-top: 8px;
    } 
 
    /* fuer die svg als <img>  */
   #logo {
-    margin-top: 1px;
+    margin-left:8px;
+    margin-top: -10px;
+    width: 150%;
+    height:150%;
    }
    @media only screen and (max-width: 660px) {
       #logo {
-        margin-top: 10px;
+        margin-top: -9px;
        } }
 
   .logo-container {

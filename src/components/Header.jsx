@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Context } from '../Context';
 import { Link } from 'react-router-dom';
-import Logo from '../assets/targetx-logo-outl.svg';
+import Logo from '../assets/BeautifulMindAI.svg';
 
 // ✅ Extracted reusable language switcher
 function LanguageSwitcher({ language, changeLanguage }) {
@@ -52,7 +52,7 @@ export default function Header() {
     <header id="header">
       <div className="logo-container logo">
         <Link to="/">
-          <img id="logo" src={Logo} alt="TargetX Logo" />
+          <img id="logo" src={Logo} alt="DigitalMindAI" />
           <div style={{ opacity: "0", width: "100%", height: "100%" }}>targetx.de</div>
         </Link>
       </div>

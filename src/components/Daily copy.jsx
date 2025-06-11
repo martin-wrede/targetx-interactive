@@ -44,20 +44,7 @@ export default function Daily() {
         <h1> Daily Motivation</h1>
           
 <h2>Heute Motivation und Aufgaben</h2> 
- <h2>🎯 Today’s Task</h2>
-      <p>Define your target audience in one sentence.</p>
-      <small>Tip: Who are you helping, and what are they struggling with?</small>
-<br />
-      <button onClick={() => setCompleted(true)}>
-        {completed ? '✅ Task Completed' : 'Mark as Done'}
-      </button>
-
-      <blockquote className="quote">
-        <p>"Start where you are. Use what you have. Do what you can."</p>
-        <footer>— Arthur Ashe</footer>
-      </blockquote>
-
-      <a href="/planner" className="roadmap-button">See Full Roadmap</a>
+ 
 
                                                           
  
@@ -69,7 +56,7 @@ export default function Daily() {
         <br />
         <img
           className="content-image"
-          src= "/targetx-interactive/motivation-daily.png"
+          src= "/targetx-interactive/motivation.jpg"
           alt="Motivation"
           title= "Motivation"
           />
@@ -83,4 +70,3 @@ export default function Daily() {
     </div>
   );
 }
-                            

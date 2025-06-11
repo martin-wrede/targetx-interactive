@@ -76,8 +76,15 @@ Verschaffen Sie sich eine frühe Traktion durch Schöpfer (Ali Abdaal, Thomas Fr
        
         <br />
         <br />
-        {data[3] &&  <img src={`${data[3].sidebar_image}`} />}
+          <img
+          className="content-image"
+          src= "/targetx-interactive/designthinking.jpg"
+          title= "Design Thinking"
+          />
+        {/*
         
+        {data[3] &&  <img src={`${data[3].sidebar_image}`} />}
+         */}
         <br />
         <br />
       </div>
