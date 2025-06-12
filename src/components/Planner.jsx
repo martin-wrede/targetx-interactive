@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Gallery from './Gallery';
- 
+import Roadmap from './Roadmap'; 
 import { Context } from '../Context';
 
 
@@ -27,17 +27,20 @@ export default function Planner() {
 
        <h2>2 Generate Plan</h2>
 
-        //////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////
+        
+        
+        <Roadmap 
+        //  roadmapData={{ date, task, motivation}}
+          />
        
-       <h2>3 Image Generation</h2>
+       <h2>Tools</h2>
 
+      Image Generation
          <iframe
             src="https://react-image-creator-2.pages.dev/"
 
             title="External Content"
-            width="100%"
+                                                                                                 width="100%"
             height="400"
             style={{ border: '1px solid #ccc' }}
           ></iframe>

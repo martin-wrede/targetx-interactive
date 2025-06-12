@@ -521,7 +521,7 @@ img {
       display: -webkit-flex;
         display: -webkit-flex;
         display: flex;
-        -webkit-align-items: center;
+       /* -webkit-align-items: center;*/
         height:100%;
           height:100%;
   
@@ -554,7 +554,7 @@ img {
     width:100%;
     display: -webkit-flex;
     display: flex;
-    -webkit-align-items: center;
+  /*  -webkit-align-items: center; */
     align-items: center;
   }
   
@@ -590,7 +590,7 @@ img {
     display: flex;
   
     -ms-flex-align: center;
-    -webkit-align-items: center;
+ /*   -webkit-align-items: center;*/
     -webkit-box-align: center;
   
     /* text-align:center; */
@@ -702,7 +702,7 @@ img {
     display: -webkit-flex;
     display: flex;
     -ms-flex-align: center;
-    -webkit-align-items: center;
+  /*  -webkit-align-items: center; */
     -webkit-box-align: center;
     text-align:center;
     -ms-flex-pack: center;
