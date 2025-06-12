@@ -52,7 +52,7 @@ export default function HowItWorks() {
  Geben Sie Ihre Idee ein
       </li>
       <li>
-        Erhalten Sie eine Geschäftsanalyse
+        Erhalten Sie eine Aanalyse
       </li>
       <li>
         Sie erhalten einen für Ihren persönlichen Termin optimierten Plan

@@ -46,24 +46,21 @@ export default function Daily() {
 <h2>Heute Motivation und Aufgaben</h2> 
 <br/>
 
- 
-      <button onClick={() => setCompleted(true)}>
-        {completed ? '✅ Task Completed' : 'Mark as Done'}
-      </button>
+  <img
+          className="content-image"
+          src= "/targetx-interactive/daily-calendar.jpg"
+          alt="Kalendar"
+          title= "Kalendar"
+     
+          />
+     
 <br/>
 <br/>
 
 {/* 
       <a href="/planner" className="roadmap-button">See Full Roadmap</a>
 */}
-        <img
-          className="content-image"
-          src= "/targetx-interactive/motivation-daily.png"
-          alt="Motivation"
-          title= "Motivation"
-          width="200"
-          />
-                                                    
+                              
  
         </div>
       </div>
@@ -71,9 +68,17 @@ export default function Daily() {
        
         <br />
         <br />
-      
+             <img
+          className="content-image"
+          src= "/targetx-interactive/motivation-daily.png"
+          alt="Motivation"
+          title= "Motivation"
+          width="200"
+          />
+                         
+      {/* 
         {data[3] &&  <img src={`${data[3].sidebar_image}`} />}
-        
+        */}
         <br />
         <br />
       </div>

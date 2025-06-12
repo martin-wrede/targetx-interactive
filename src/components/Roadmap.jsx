@@ -4,13 +4,13 @@ import React, { useState } from 'react';
 const sampleRoadmapData = [
   {
     date: '2025-06-16',
-    task: 'Define target audience: Who is this book for?',
-    motivation: 'Gymnastics'
+    task: 'Define target audience in one sentence?  ',
+    motivation: 'Yoga                                                                                     '
   },
   {
     date: '2025-06-17',
     task: 'Write value proposition: What transformation does the reader get?',
-    motivation: 'Talk to a college'
+    motivation: 'Talk to a colleague'
   },
   {
     date: '2025-06-18',
@@ -20,7 +20,7 @@ const sampleRoadmapData = [
   {
     date: '2025-06-19',
     task: 'Brainstorm page sections: Hero, About, Book Preview, Testimonials, Buy CTA.',
-    motivation: 'Watch the movie on Steve Jobs'
+    motivation: 'Watch the movie about Steve Jobs'
   },
   {
     date: '2025-06-20',
