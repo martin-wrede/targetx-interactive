@@ -40,8 +40,8 @@ export default function HowItWorks() {
       <div className="content_container" id="main">
         <div className="content_main" id="content">
         <h1> How it works</h1>
-          
-<h2>
+        
+<h2>   
           AI Accountability Agents </h2>
           
            um Sie zu motivieren, Ihre Ziele zu erreichen 
@@ -69,12 +69,9 @@ Ich würde dies ausbauen, indem ich mich direkt an die ehrgeizbesessene Ecke des
 Verschaffen Sie sich eine frühe Traktion durch Schöpfer (Ali Abdaal, Thomas Frank, Tiago Forte-Style) via Rev Share Deal, sie haben Vertrauen und Reichweite. Bauen Sie eine Gemeinschaft auf, die sich um die Momentum Streaks kümmert, nicht nur um die Zielverfolgung. Nutzen Sie öffentliche Verantwortungsschleifen (wöchentliche Fortschrittsberichte, die auf X geteilt werden, Mini-Ranglisten in Slack-Gruppen), um eine virale Bindung zu schaffen. Sobald die individuelle Ebene gefestigt ist, erweitern Sie sie auf Teams: „Geben Sie Ihrem Team einen KI-Coach, der ihnen hilft, persönliche Ziele zu erreichen, die tatsächlich passen.
 */}
 <br/>
- 
-  	      <img
-          className="content-image"
-          src= "/targetx-interactive/designthinking.jpg"
-          title= "Design Thinking"
-          />
+   
+          
+  	  
 
           {/*
  Es gibt zahlreiche Daten und Studien, die belegen, 
@@ -84,13 +81,16 @@ Verschaffen Sie sich eine frühe Traktion durch Schöpfer (Ali Abdaal, Thomas Fr
    */}     
   </div>
       </div>
+   
       <div id="sidebar" className="content_sub">
-       
-  	      <img
+           <img
           className="content-image"
-          src= "/targetx-interactive/howitworks.png"
+          src= "/targetx-interactive/designthinking.jpg"
           title= "Design Thinking"
+          style={{width:"300px"}}
+          
           />
+  	      
         <br />
         <br />
           
