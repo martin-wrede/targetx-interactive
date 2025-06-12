@@ -68,19 +68,32 @@ export default function HowItWorks() {
 Ich würde dies ausbauen, indem ich mich direkt an die ehrgeizbesessene Ecke des Internets wende... Indie-Hacker, Produktivitäts-YouTuber, Kohorten-Kurs-Junkies und Solo-Gründer, die bereits James Clear gelesen und fünf ungelesene Notion-Vorlagen über Ziele haben. Beginnen Sie damit, es zu einer Bewegung zu machen, nicht zu einem Produkt: „ein Mini-James-Clear für die Hosentasche“, ‚eine KI, die sich darum kümmert, ob du deine Ziele erreichst‘. Zeigen Sie Check-Ins, Siege und echte Fortschritts-Screenshots.
 Verschaffen Sie sich eine frühe Traktion durch Schöpfer (Ali Abdaal, Thomas Frank, Tiago Forte-Style) via Rev Share Deal, sie haben Vertrauen und Reichweite. Bauen Sie eine Gemeinschaft auf, die sich um die Momentum Streaks kümmert, nicht nur um die Zielverfolgung. Nutzen Sie öffentliche Verantwortungsschleifen (wöchentliche Fortschrittsberichte, die auf X geteilt werden, Mini-Ranglisten in Slack-Gruppen), um eine virale Bindung zu schaffen. Sobald die individuelle Ebene gefestigt ist, erweitern Sie sie auf Teams: „Geben Sie Ihrem Team einen KI-Coach, der ihnen hilft, persönliche Ziele zu erreichen, die tatsächlich passen.
 */}
+<br/>
  
- 
-        </div>
-      </div>
-      <div id="sidebar" className="content_sub">
-       
-        <br />
-        <br />
-          <img
+  	      <img
           className="content-image"
           src= "/targetx-interactive/designthinking.jpg"
           title= "Design Thinking"
           />
+
+          {/*
+ Es gibt zahlreiche Daten und Studien, die belegen, 
+ dass der Einsatz von KI-Tools die Projektlaufzeiten in der Softwareentwicklung
+ , insbesondere bei Prototypen und Apps, erheblich verkürzen und den benötigten
+  Personalaufwand reduzieren kann. <br/>Die Einschätzung, dass dies von Monaten mit einem ganzen Team auf Wochen mit 1-2 Personen reduziert werden kann, wird durch die Forschung gestützt.
+   */}     
+  </div>
+      </div>
+      <div id="sidebar" className="content_sub">
+       
+  	      <img
+          className="content-image"
+          src= "/targetx-interactive/howitworks.png"
+          title= "Design Thinking"
+          />
+        <br />
+        <br />
+          
         {/*
         
         {data[3] &&  <img src={`${data[3].sidebar_image}`} />}

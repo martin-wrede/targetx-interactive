@@ -9,11 +9,35 @@ export default function Planner() {
 
   return (
  <div>
-  
-   
       <h1>Try the Planner</h1>
 <br/>
  
+  <b>1 Welches Haupt-Problem willst du lösen?</b>
+      <br />
+  <input></input>
+
+     <br />     <br />
+ <b>2 Welche Lösung siehst Du dafür?</b>
+
+   <br />
+  <input></input>
+   <br /> <br />
+  <b>3 In welchem Zeitraum willst Du das Ergebnis fertig haben?</b>
+   <br />  
+  <input></input>
+     <br /> <br />
+  <b>4 Welche Art von Ergebnis erwartest Du?</b>
+  <br/>
+    (Prototyp, fertiges Endprodukt)
+   <br />  
+
+  <input ></input>
+
+     <br /> <br />
+   <button>submit</button>
+  
+    <br /> <br />
+  
       <h2> 1 Business Idea Input</h2>
 
             <iframe
@@ -35,7 +59,10 @@ export default function Planner() {
        
        <h2>Tools</h2>
 
-      Image Generation
+
+
+     <b> Image Generation</b>
+     <br />
          <iframe
             src="https://react-image-creator-2.pages.dev/"
 

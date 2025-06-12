@@ -10,7 +10,7 @@ const sampleRoadmapData = [
   {
     date: '2025-06-17',
     task: 'Write value proposition: What transformation does the reader get?',
-    motivation: 'Talk to a colleague'
+    motivation: 'Exchange with a colleague'
   },
   {
     date: '2025-06-18',
@@ -323,7 +323,7 @@ export default function Roadmap({ roadmapData = sampleRoadmapData }) {
       location: 'Personal Development'
     });
     
-    return `https://calendar.google.com/calendar/render?${params.toString()}`;
+     return `https://calendar.google.com/calendar/render?${params.toString()}`;
   };
 
   return (
