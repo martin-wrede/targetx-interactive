@@ -41,9 +41,9 @@ export default function Daily() {
       <div className="content_container" id="main">
         <div className="content_main" id="content">
 
-        <h1> Daily Motivation</h1>
+        <h1> Daily Tasks & Motivation</h1>
           
-<h2>Heute Motivation und Aufgaben</h2> 
+<h2>Heutige Aufgaben &  Motivation</h2> 
 <br/>
 
   <img
@@ -51,6 +51,7 @@ export default function Daily() {
           src= "/targetx-interactive/daily-calendar.jpg"
           alt="Kalendar"
           title= "Kalendar"
+         
      
           />
      

@@ -3,11 +3,6 @@ import React, { useState } from 'react';
 // Sample data based on your example
 const sampleRoadmapData = [
   {
-    date: '2025-06-16',
-    task: 'Define target audience in one sentence?  ',
-    motivation: 'Yoga                                                                                     '
-  },
-  {
     date: '2025-06-17',
     task: 'Write value proposition: What transformation does the reader get?',
     motivation: 'Exchange with a colleague'

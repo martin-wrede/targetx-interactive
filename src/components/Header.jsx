@@ -63,7 +63,7 @@ export default function Header() {
           <ul>
             <li><Link to="/how-it-works">How It Works</Link></li>
         <li><Link to="/planner">Try the Planner</Link></li>
-        <li><Link to="/daily">Daily Motivation</Link></li>
+        <li><Link to="/daily">Daily</Link></li>
         <li><Link to="/about">About</Link></li>
           </ul>
         </div>
